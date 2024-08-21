@@ -1,0 +1,15 @@
+services:
+  xampp:
+    image: tomsik68/xampp
+    ports:
+      - "2222:22"
+      - "8080:80"
+    volumes:
+      # Mount your web pages
+      - ./public_html:/opt/lampp/htdocs
+      # Mount your apache configuration
+      # - ./xampp/my_apache_conf/:/opt/lampp/apache2/conf.d
+      #Save MySQL data to be persistent
+      # add the dbs as needed
+      # - ./xampp/mysql/mydb:/opt/lampp/var/mysql/mydb
+    restart: always
