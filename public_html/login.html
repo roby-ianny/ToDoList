@@ -7,7 +7,7 @@
         <link href="./css/bootstrap.css" rel="stylesheet" />
         <link href="./css/styles.css" rel="stylesheet" />
     </head>
-    <body class="d-flex flex-column">
+    <body class="d-flex flex-column min-vh-100">
         <!-- Including bootsrap javascript -->
         <script src="./js/bootstrap.bundle.js" crossorigin="anonymous"></script>
         <!-- navbar -->
@@ -68,33 +68,32 @@
             </div>
         </nav>
 
-        <footer class="bg-body-tertiary text-center text-lg-start">
-            <div
-                class="text-center p-3 fixed-bottom"
-                style="background-color: rgba(0, 0, 0, 0.05)"
-            >
-                © 2024 Copyright: Roberto Pio Iannello e Luca Carossino
-            </div>
-        </footer>
+
 
         <!--page content -->
-        <div class="container-fluid">
-            <h1>Login</h1>
-            <form action="login.php" method="post">
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" name="email">
-                </div>
-                <div class="mb-3">
-                    <label for="pass" class="form-label">Password</label>
-                    <input type="password" class="form-control" name="pass">
-                </div>
-                <div class="mb-3">
-                    <button type="submit" class="btn btn-primary" name="submit" value="...A VOSTRA SCELTA...">Login</button>
-                </div>
-            </form>
+        <div class="container">
+            <div class="row justify-content-center">
+                <h1>Login</h1>
+                <form action="login.php" method="post">
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" name="email">
+                    </div>
+                    <div class="mb-3">
+                        <label for="pass" class="form-label">Password</label>
+                        <input type="password" class="form-control" name="pass">
+                    </div>
+                    <div class="mb-3">
+                        <button type="submit" class="btn btn-primary" name="submit" value="...A VOSTRA SCELTA...">Login</button>
+                    </div>
+                </form>
+            </div>
         </div>
 
-
+        <footer class="mt-auto bg-dark text-white text-center">
+            <div class="container">
+                <p class="text-align-center">&COPY; 2024 Copyright: Roberto Pio Iannello e Luca Carossino</p>
+            </div>
+        <footer>
     </body>
 </html>
