@@ -12,4 +12,5 @@ services:
       #Save MySQL data to be persistent
       # add the dbs as needed
       # - ./xampp/mysql/mydb:/opt/lampp/var/mysql/mydb
+      - ./public_html/db:/opt/lampp/var/mysql/mydb
     restart: always
