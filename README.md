@@ -2,7 +2,7 @@
 Clone (fatto male) di todoist
 
 ## Struttura iniziale del DB
-![Struttura Database](./DB.jpeg)
+![Struttura Database](./DB.png)
 ## Features
 Obbligatorie
 - Presentazione di startSAW

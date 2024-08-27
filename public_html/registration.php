@@ -42,13 +42,13 @@
                                     <a
                                         class="nav-link active"
                                         aria-current="page"
-                                        href="./index.html"
+                                        href="./index.php"
                                         >Home</a
                                     >
                                 </li>
                             </ul>
                             <form class="d-flex">
-                                <a href="./login.html">
+                                <a href="./login.php">
                                     <button
                                         class="btn btn-outline-success me-2"
                                         type="button"
@@ -56,7 +56,7 @@
                                         Login
                                     </button>
                                 </a>
-                                <a href="./register.html"> <button class="btn btn-outline-success me-2"
+                                <a href="./registration.php"> <button class="btn btn-outline-success me-2"
                                         type="button"
                                     >
                                         Register
@@ -71,8 +71,10 @@
         <!--page content -->
         <div class="container">
             <div class="row justify-content-center">
+            <?php include "./php/register.php"; ?>
+
                 <h1>Registrati</h1>
-                <form action="registration.php" method="post">
+                <form action="./php/register.php" method="post">
                     <div class="mb-3">
                         <label for="firstname" class="form-label">Nome</label>
                         <input type="text" class="form-control" name="firstname">
@@ -94,7 +96,7 @@
                         <input type="password" class="form-control" name="confirm">
                     </div>
                     <div class="mb-3">
-                        <button type="submit" class="btn btn-primary" name="submit" value="...A VOSTRA SCELTA...">Registrati</button>
+                        <input type="submit" class="btn btn-primary" name="submit" value="Registrati">
                     </div>
                 </form>
             </div>

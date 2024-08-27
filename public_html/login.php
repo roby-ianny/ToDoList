@@ -42,13 +42,13 @@
                             <a
                                 class="nav-link active"
                                 aria-current="page"
-                                href="./index.html"
+                                href="./index.php"
                                 >Home</a
                             >
                         </li>
                     </ul>
                     <form class="d-flex">
-                        <a href="./login.html">
+                        <a href="./login.php">
                             <button
                                 class="btn btn-outline-success me-2"
                                 type="button"
@@ -56,7 +56,7 @@
                                 Login
                             </button>
                         </a>
-                        <a href="./register.html">
+                        <a href="./registration.php">
                             <button
                                 class="btn btn-outline-success me-2"
                                 type="button"
@@ -74,7 +74,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <h1>Login</h1>
-                <form action="login.php" method="post">
+                <form action="./php/register.php" method="post">
                     <div class="mb-3">
                         <label for="email" class="form-label">Email</label>
                         <input type="email" class="form-control" name="email">
@@ -84,7 +84,7 @@
                         <input type="password" class="form-control" name="pass">
                     </div>
                     <div class="mb-3">
-                        <button type="submit" class="btn btn-primary" name="submit" value="...A VOSTRA SCELTA...">Login</button>
+                        <input type="submit" class="btn btn-primary" name="submit" value="Login">
                     </div>
                 </form>
             </div>
