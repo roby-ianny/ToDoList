@@ -77,7 +77,7 @@
                 <form action="./php/register.php" method="post">
                     <div class="mb-3">
                         <label for="firstname" class="form-label">Nome</label>
-                        <input type="text" class="form-control" name="firstname">
+                        <input type="text" class="form-control" name="firstname" >
                     </div>
                     <div class="mb-3">
                         <label for="lastname" class="form-label">Cognome</label>
@@ -96,7 +96,7 @@
                         <input type="password" class="form-control" name="confirm">
                     </div>
                     <div class="mb-3">
-                        <input type="submit" class="btn btn-primary" name="submit" value="Registrati">
+                        <button type="submit" class="btn btn-primary" name="submit" value="Registrati">Registrati</button>
                     </div>
                 </form>
             </div>
