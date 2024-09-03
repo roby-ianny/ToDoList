@@ -62,6 +62,7 @@
                                         Register
                                     </button>
                                 </a>
+                            </form>
                         </div>
                     </div>
                 </nav>
@@ -70,9 +71,7 @@
 
         <!--page content -->
         <div class="container">
-            <div class="row justify-content-center">
-            <?php include "./php/register.php"; ?>
-
+            <class="row justify-content-center">
                 <h1>Registrati</h1>
                 <form action="./php/register.php" method="post">
                     <div class="mb-3">

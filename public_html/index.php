@@ -64,6 +64,7 @@
                                         Registrati
                                     </button>
                                 </a>
+                            </form>
                         </div>
                     </div>
                 </nav>
