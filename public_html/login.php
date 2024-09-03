@@ -75,10 +75,10 @@
         <div class="container">
             <div class="row justify-content-center">
                 <h1>Login</h1>
-                <form action="./php/register.php" method="post">
+                <form action="./php/login.php" method="post">
                     <div class="mb-3">
                         <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control" name="email">
+                        <input type="email" class="form-control" name="mail">
                     </div>
                     <div class="mb-3">
                         <label for="pass" class="form-label">Password</label>
