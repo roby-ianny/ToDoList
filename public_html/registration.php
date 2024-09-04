@@ -18,6 +18,12 @@
   <div class="container">
     <class="row justify-content-center">
       <h1>Registrati</h1>
+      <?php 
+          session_start();
+          if(isset($_SESSION['errors'])) {
+            echo '<div class="alert alert-warning" role="alert">'. $_SESSION["errors"] .'. Riprova</div>';
+          }
+        ?>
       <form action="./php/register.php" method="post">
         <div class="mb-3">
           <label for="firstname" class="form-label">Nome</label>

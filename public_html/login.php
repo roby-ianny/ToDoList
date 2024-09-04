@@ -17,7 +17,13 @@
   <!--page content -->
   <div class="container">
     <div class="row justify-content-center">
-      <h1>Login</h1>
+        <h1>Login</h1>
+        <?php 
+          session_start();
+          if(isset($_SESSION['errors'])) {
+            echo '<div class="alert alert-warning" role="alert">'. $_SESSION["errors"] .'. Riprova</div>';
+          }
+        ?>
       <form action="./php/login.php" method="post">
         <div class="mb-3">
           <label for="email" class="form-label">Email</label>
