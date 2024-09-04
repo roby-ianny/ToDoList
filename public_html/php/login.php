@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <title>Sign-up</title>
 </head>
-
 <body>
 
     <?php
@@ -25,28 +24,27 @@
     }
 
     if($_POST["pass"]){
-        $passwd = password_hash(trim($_POST["pass"]), PASSWORD_DEFAULT);
+        $passwd = trim($_POST["pass"]);
     } else {
         $errors[] = "Invalid password";
     }
 
     $con = new mysqli("localhost", "root", "", "todolist");
 
-    $stmt = $con->prepare("SELECT * FROM Users WHERE Email = ?");
-
-    mysqli_stmt_bind_param($stmt, "s", $mail);
+    $stmt = $con->prepare("SELECT Password FROM Users WHERE Email = ?");
+    $stmt->bind_param("s", $mail);
     $stmt->execute();
     $result = $stmt->get_result();
-    
-    if ($result->num_rows > 0) {
-        echo '<p>Accesso effettuato!</a></p>';
-    } else {
-        $errors[] = "Email o password non valida";
-        echo $errors[0];
-        echo " <a href='../login.php'>Riprova</a>";
-        exit;
+    if ($result->num_rows > 0){
+      $db_pwd = $result->fetch_assoc(); 
+      if(password_verify($passwd, $db_pwd["Password"]))
+        echo "You are now logged id, you can go to your Homepage";
+      else {
+        $errors[] = "Invalid email or password";
+        echo $errors[0]; 
+      }
     }
-
+    
     ?>
 
 </body>

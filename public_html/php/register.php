@@ -65,7 +65,7 @@
 
       // controllo se l'utente già esiste
       $stmt = $con->prepare("SELECT * FROM Users WHERE Email = ?");  
-      mysqli_stmt_bind_param($stmt, "s", $mail);
+      $stmt->bind_param("s", $mail);
       $stmt->execute();
       $result = $stmt->get_result();
       if ($result->num_rows > 0) {
@@ -82,7 +82,7 @@
       mysqli_stmt_bind_param($stmt, "ssss", $firstname, $lastname, $mail, $passwd);
       $stmt->execute();
 
-      echo '<p> You can now go to the <a href="./login.html"> login page </a></p>';
+      echo '<p> You can now go to the <a href="./login.php"> login page </a></p>';
 
     } else {
       echo $errors[0];
