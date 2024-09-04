@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>Sign-up</title>
-</head>
-<body>
-
-    <?php
-
+<?php
     if($_SERVER["REQUEST_METHOD"] != "POST") {
         echo "Invalid request";
         exit;
@@ -37,15 +28,12 @@
     $result = $stmt->get_result();
     if ($result->num_rows > 0){
       $db_pwd = $result->fetch_assoc(); 
-      if(password_verify($passwd, $db_pwd["Password"]))
+      if(password_verify($passwd, $db_pwd["Password"])){
         echo "You are now logged id, you can go to your Homepage";
-      else {
+        header("location:  ../dashboard.php");
+      } else {
         $errors[] = "Invalid email or password";
         echo $errors[0]; 
       }
-    }
-    
-    ?>
-
-</body>
-</html>
+   }
+?>
