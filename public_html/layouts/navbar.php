@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="./index.php">
       <img src="./images/check2-square.svg" alt="Checkbox logo" width="30" height="30" />
       ToDoList
     </a>

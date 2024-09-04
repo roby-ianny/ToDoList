@@ -15,7 +15,11 @@
     <!-- navbar -->
     <?php include "./layouts/navbar.php"; ?>
     <!--page content -->
-    <?php include "./php/checksession.php" ?>
+    <div class="container">
+        <div class="row justify-content-center">
+            <h1>Si è veriricato un errore, torna alla <a href="./index.php">home</a></h1>srg
+        </div>
+    </div>
     <!-- footer -->
     <?php include "./layouts/footer.php"; ?>
 </body>
