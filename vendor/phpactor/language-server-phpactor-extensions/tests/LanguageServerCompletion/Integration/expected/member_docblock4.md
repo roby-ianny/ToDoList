@@ -1,9 +1,0 @@
-Doobar
-
----
-
-Barfoo
-
----
-
-Foobar

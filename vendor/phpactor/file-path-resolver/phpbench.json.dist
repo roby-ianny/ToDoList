@@ -1,4 +1,0 @@
-{
-    "path": "tests/Benchmark",
-    "bootstrap": "vendor/autoload.php"
-}

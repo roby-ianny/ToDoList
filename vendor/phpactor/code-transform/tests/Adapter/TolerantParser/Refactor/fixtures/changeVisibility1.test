@@ -1,8 +1,0 @@
-// File: source
-<?php
-
-'he<>llo';
-// File: expected
-<?php
-
-'hello';

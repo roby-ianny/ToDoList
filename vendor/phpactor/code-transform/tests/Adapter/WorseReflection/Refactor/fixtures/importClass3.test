@@ -1,9 +1,0 @@
-// File: source
-<?php
-
-new Fo<>obar();
-// File: expected
-<?php
-
-use Foobar;
-new Foobar();

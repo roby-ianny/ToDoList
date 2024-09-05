@@ -1,3 +1,0 @@
-{% if prototype.type.notNone %}{{ prototype.type.nullable ? '?' : '' }}{{ prototype.type }} {% endif %}
-{% if prototype.byReference %}&{% endif %}{% if true %}${{ prototype.name }}{% endif %}
-{% if prototype.defaultValue.notNone %} = {{ prototype.defaultValue.export|raw }}{% endif %}
