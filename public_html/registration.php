@@ -19,7 +19,6 @@
     <class="row justify-content-center">
       <h1>Registrati</h1>
       <?php 
-          session_start();
           if(isset($_SESSION['errors'])) {
             echo '<div class="alert alert-warning" role="alert">'. $_SESSION["errors"] .'. Riprova</div>';
           }

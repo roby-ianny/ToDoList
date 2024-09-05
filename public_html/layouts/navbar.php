@@ -15,16 +15,27 @@
         </li>
       </ul>
       <form class="d-flex">
-        <a href="./login.php">
-          <button class="btn btn-outline-success me-2" type="button">
-            Login
+        <?php 
+        session_start();
+        if(isset($_SESSION['session_id'])) {
+          echo '<a href="./php/logout.php">
+          <button class="btn btn-outline-danger me-2" type="button">
+            Logout
           </button>
-        </a>
-        <a href="./registration.php">
-          <button class="btn btn-outline-success me-2" type="button">
-            Registrati
-          </button>
-        </a>
+        </a>';
+        } else {
+          echo '<a href="./login.php">
+            <button class="btn btn-outline-success me-2" type="button">
+              Login
+            </button>
+          </a>
+          <a href="./registration.php">
+            <button class="btn btn-outline-success me-2" type="button">
+              Registrati
+            </button>
+          </a>';
+        }
+        ?>
       </form>
     </div>
   </div>
