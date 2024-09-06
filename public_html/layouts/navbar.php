@@ -1,3 +1,19 @@
+<!doctype html>
+<html lang="it">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ToDoList</title>
+  <link href="./css/bootstrap.css" rel="stylesheet" />
+  <link href="./css/styles.css" rel="stylesheet" />
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+  <!-- Including bootsrap javascript -->
+  <script src="./js/bootstrap.bundle.js" crossorigin="anonymous"></script>
+  <!-- Navbar -->
+
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <a class="navbar-brand" href="./index.php">
@@ -12,6 +28,9 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="./index.php">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="./dashboard.php">Dashboard</a>
         </li>
       </ul>
       <form class="d-flex">
