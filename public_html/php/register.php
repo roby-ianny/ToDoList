@@ -1,4 +1,5 @@
 <?php
+require_once("./tasksfunctions.php");
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] != "POST") {
@@ -45,13 +46,7 @@ if (!empty($errors)) {
   exit();
 }
 // mi collego al db
-try {
-  $con = new mysqli("localhost", "root", "", "todolist");
-} catch (\Throwable $th) {
-  error_log("Database connection failed: " . $th->getMessage());
-  header("location: ../error.php");
-  exit;
-}
+$con = db_connection(); 
 
 // controllo se l'utente già esiste
 $stmt = $con->prepare("SELECT * FROM Users WHERE Email = ?");
@@ -65,12 +60,17 @@ if ($result->num_rows > 0) {
   exit();
 }
 
+// inserisco l'utente nel db
 $stmt = $con->prepare(
   "INSERT INTO Users (Firstname, Lastname, Email, Password) VALUES (?, ?, ?, ?)"
 );
-
 mysqli_stmt_bind_param($stmt, "ssss", $firstname, $lastname, $mail, $passwd);
 $stmt->execute();
+
+//TODO: aggiungere la creazione di un progetto di default
+//TODO: aggiungere la creazione di un task di default
+
+// setto le variabili di sessione per sapere se l'utente è loggato
 session_regenerate_id();
 $_SESSION["session_id"] = session_id();
 $_SESSION["session_user"] = $mail;
