@@ -68,39 +68,33 @@ mysqli_stmt_bind_param($stmt, "ssss", $firstname, $lastname, $mail, $passwd);
 $stmt->execute();
 
 //Prendo l'id
-$result = $stmt->get_result();
-if ($result->num_rows>0){
-  $userid = $result->fetch_assoc();
-  $userid = $userid[`id`];
-} else {
+$userid = $con->insert_id;
+if (!($userid)){
   header("location: ../error.php");
   exit();
 }
 
 //aggiungere la creazione di un progetto di default
 $stmt = $con->prepare(
-  "INSERTO INTO Projects (Name, Creator) VALUES (?, ?)"
+  "INSERT INTO Projects (Name, Creator) VALUES (?, ?)"
 );
-$stmt->bind_param("si", 'Generale', $userid);
+$defaultprojectname = 'Generale';
+$stmt->bind_param("si", $defaultprojectname, $userid);
 $stmt->execute();
 
 //TODO: aggiungere la creazione di un task di default
-$result = $stmt->get_result();
-if ($result->num_rows>0){
-  $projectid= $result->fetch_assoc();
-  $projectid= $projectid[`id`];
-} else {
+$projectid = $con->insert_id;
+if (!($projectid)){
   header("location: ../error.php");
   exit();
 }
 
 $stmt = $con->prepare(
-  "INSERTO INTO Tasks (Name, Creation, Project) VALUES (?, NOW(), ?)"
+  "INSERT INTO Tasks (Name, Creation, Project) VALUES (?, NOW(), ?)"
 );
-$stmt->bind_param("si", 'Benvenuto', $projectid);
+$defaulttaskname = 'Benvenuto';
+$stmt->bind_param("si", $defaulttaskname, $projectid);
 $stmt->execute();
-
-
 
 
 // setto le variabili di sessione per sapere se l'utente è loggato
