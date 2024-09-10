@@ -29,7 +29,7 @@ if ($_POST["pass"]) {
 
 $con = new mysqli("localhost", "root", "", "todolist");
 
-$stmt = $con->prepare("SELECT Password FROM Users WHERE Email = ?");
+$stmt = $con->prepare("SELECT Password,id FROM Users WHERE Email = ?");
 $stmt->bind_param("s", $mail);
 $stmt->execute();
 $result = $stmt->get_result();
@@ -39,7 +39,7 @@ if ($result->num_rows > 0) {
   if (password_verify($passwd, $db_pwd["Password"])) {
     session_regenerate_id();
     $_SESSION["session_id"] = session_id();
-    $_SESSION["session_user"] = $mail;
+    $_SESSION["session_user"] = $db_pwd["id"];
     header("location:  ../dashboard.php");
   } else {
     $errors[] = "Email o password non valida";

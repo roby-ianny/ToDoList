@@ -1,0 +1,438 @@
+[
+     {
+          "Id": "d148f220780d81b0b3c2a3f3a8761760bbc5e51c6908558e74530bbfea9bc073",
+          "Created": "2024-08-30T10:25:39.147703837+02:00",
+          "Path": "/usr/bin/supervisord",
+          "Args": [
+               "-n"
+          ],
+          "State": {
+               "OciVersion": "1.2.0",
+               "Status": "running",
+               "Running": true,
+               "Paused": false,
+               "Restarting": false,
+               "OOMKilled": false,
+               "Dead": false,
+               "Pid": 19079,
+               "ConmonPid": 19077,
+               "ExitCode": 0,
+               "Error": "",
+               "StartedAt": "2024-09-09T11:42:32.572934113+02:00",
+               "FinishedAt": "2024-09-04T18:31:44.843585261+02:00",
+               "CgroupPath": "/user.slice/user-1000.slice/user@1000.service/user.slice/user-libpod_pod_d08daf082acc516bd1f93f2370f4af64d7385f2af1ec033aac6b5e6b6e17a47d.slice/libpod-d148f220780d81b0b3c2a3f3a8761760bbc5e51c6908558e74530bbfea9bc073.scope",
+               "CheckpointedAt": "0001-01-01T00:00:00Z",
+               "RestoredAt": "0001-01-01T00:00:00Z"
+          },
+          "Image": "2680985fab385de36fabfde9cdede8e9c17003a75ef81af29d185263d5e5c693",
+          "ImageDigest": "sha256:f458b646fd80e901e0da9199bf49d48a395c0976024dc3be2459096ad83cb056",
+          "ImageName": "docker.io/tomsik68/xampp:latest",
+          "Rootfs": "",
+          "Pod": "d08daf082acc516bd1f93f2370f4af64d7385f2af1ec033aac6b5e6b6e17a47d",
+          "ResolvConfPath": "/run/user/1000/containers/overlay-containers/d148f220780d81b0b3c2a3f3a8761760bbc5e51c6908558e74530bbfea9bc073/userdata/resolv.conf",
+          "HostnamePath": "/run/user/1000/containers/overlay-containers/d148f220780d81b0b3c2a3f3a8761760bbc5e51c6908558e74530bbfea9bc073/userdata/hostname",
+          "HostsPath": "/run/user/1000/containers/overlay-containers/d148f220780d81b0b3c2a3f3a8761760bbc5e51c6908558e74530bbfea9bc073/userdata/hosts",
+          "StaticDir": "/home/roby/.local/share/containers/storage/overlay-containers/d148f220780d81b0b3c2a3f3a8761760bbc5e51c6908558e74530bbfea9bc073/userdata",
+          "OCIConfigPath": "/home/roby/.local/share/containers/storage/overlay-containers/d148f220780d81b0b3c2a3f3a8761760bbc5e51c6908558e74530bbfea9bc073/userdata/config.json",
+          "OCIRuntime": "crun",
+          "ConmonPidFile": "/run/user/1000/containers/overlay-containers/d148f220780d81b0b3c2a3f3a8761760bbc5e51c6908558e74530bbfea9bc073/userdata/conmon.pid",
+          "PidFile": "/run/user/1000/containers/overlay-containers/d148f220780d81b0b3c2a3f3a8761760bbc5e51c6908558e74530bbfea9bc073/userdata/pidfile",
+          "Name": "sawproject_xampp_1",
+          "RestartCount": 0,
+          "Driver": "overlay",
+          "MountLabel": "system_u:object_r:container_file_t:s0:c258,c270",
+          "ProcessLabel": "system_u:system_r:container_t:s0:c258,c270",
+          "AppArmorProfile": "",
+          "EffectiveCaps": [
+               "CAP_CHOWN",
+               "CAP_DAC_OVERRIDE",
+               "CAP_FOWNER",
+               "CAP_FSETID",
+               "CAP_KILL",
+               "CAP_NET_BIND_SERVICE",
+               "CAP_SETFCAP",
+               "CAP_SETGID",
+               "CAP_SETPCAP",
+               "CAP_SETUID",
+               "CAP_SYS_CHROOT"
+          ],
+          "BoundingCaps": [
+               "CAP_CHOWN",
+               "CAP_DAC_OVERRIDE",
+               "CAP_FOWNER",
+               "CAP_FSETID",
+               "CAP_KILL",
+               "CAP_NET_BIND_SERVICE",
+               "CAP_SETFCAP",
+               "CAP_SETGID",
+               "CAP_SETPCAP",
+               "CAP_SETUID",
+               "CAP_SYS_CHROOT"
+          ],
+          "ExecIDs": [],
+          "GraphDriver": {
+               "Name": "overlay",
+               "Data": {
+                    "LowerDir": "/home/roby/.local/share/containers/storage/overlay/25406f65ac36290b1637322d4baaf67c429f0ac070050a11b7af13cf53f3d19d/diff:/home/roby/.local/share/containers/storage/overlay/24f493fba6b22986c149bd18a4a894913df7f6e73d6996a00b1cf597c49e904a/diff:/home/roby/.local/share/containers/storage/overlay/199be1c3a505fd5a9c8a92cfeb247775e52fbf059019f1454aed18691e0de22b/diff:/home/roby/.local/share/containers/storage/overlay/e6f0f901b1d64f5f60ec2107b5a3649cbaea357b165ec66182dc33e14f6966d4/diff:/home/roby/.local/share/containers/storage/overlay/bcac77c45969ebf722a07cf0821d63b5c6fcc28e74f405d5eec6b547acbb5629/diff:/home/roby/.local/share/containers/storage/overlay/ec983b16636050e69677eb81537e955ab927757c23aaf73971ecf5f71fcc262a/diff",
+                    "MergedDir": "/home/roby/.local/share/containers/storage/overlay/2d5ad62f9581a20416e7fa74ab0bd8798d1b30dd6f9db5586d0af45bb0f80b36/merged",
+                    "UpperDir": "/home/roby/.local/share/containers/storage/overlay/2d5ad62f9581a20416e7fa74ab0bd8798d1b30dd6f9db5586d0af45bb0f80b36/diff",
+                    "WorkDir": "/home/roby/.local/share/containers/storage/overlay/2d5ad62f9581a20416e7fa74ab0bd8798d1b30dd6f9db5586d0af45bb0f80b36/work"
+               }
+          },
+          "Mounts": [
+               {
+                    "Type": "volume",
+                    "Name": "25fcc43dd2454f0cd3301e438df9a7732eb3bfb345183b53580040e5ae33071c",
+                    "Source": "/home/roby/.local/share/containers/storage/volumes/25fcc43dd2454f0cd3301e438df9a7732eb3bfb345183b53580040e5ae33071c/_data",
+                    "Destination": "/opt/lampp/apache2/conf.d",
+                    "Driver": "local",
+                    "Mode": "",
+                    "Options": [
+                         "nodev",
+                         "exec",
+                         "nosuid",
+                         "rbind"
+                    ],
+                    "RW": true,
+                    "Propagation": "rprivate"
+               },
+               {
+                    "Type": "volume",
+                    "Name": "62cfd781cf80f71598cc95c502d4c16edbec9ab9081932e95f65f7a3aff9fc91",
+                    "Source": "/home/roby/.local/share/containers/storage/volumes/62cfd781cf80f71598cc95c502d4c16edbec9ab9081932e95f65f7a3aff9fc91/_data",
+                    "Destination": "/var/log/apache2",
+                    "Driver": "local",
+                    "Mode": "",
+                    "Options": [
+                         "nodev",
+                         "exec",
+                         "nosuid",
+                         "rbind"
+                    ],
+                    "RW": true,
+                    "Propagation": "rprivate"
+               },
+               {
+                    "Type": "volume",
+                    "Name": "bfad21a0df16eb03151e69c0edee7aec7c84361a2f02778392826eab164e66a6",
+                    "Source": "/home/roby/.local/share/containers/storage/volumes/bfad21a0df16eb03151e69c0edee7aec7c84361a2f02778392826eab164e66a6/_data",
+                    "Destination": "/var/log/mysql",
+                    "Driver": "local",
+                    "Mode": "",
+                    "Options": [
+                         "nodev",
+                         "exec",
+                         "nosuid",
+                         "rbind"
+                    ],
+                    "RW": true,
+                    "Propagation": "rprivate"
+               },
+               {
+                    "Type": "volume",
+                    "Name": "1e26809f094a9c5be13073c6b29c3b807628a8c1a9fbb2d51b69f74ab713347a",
+                    "Source": "/home/roby/.local/share/containers/storage/volumes/1e26809f094a9c5be13073c6b29c3b807628a8c1a9fbb2d51b69f74ab713347a/_data",
+                    "Destination": "/www",
+                    "Driver": "local",
+                    "Mode": "",
+                    "Options": [
+                         "nodev",
+                         "exec",
+                         "nosuid",
+                         "rbind"
+                    ],
+                    "RW": true,
+                    "Propagation": "rprivate"
+               },
+               {
+                    "Type": "bind",
+                    "Source": "/home/roby/Documenti/Github/SAWProject/public_html",
+                    "Destination": "/opt/lampp/htdocs",
+                    "Driver": "",
+                    "Mode": "",
+                    "Options": [
+                         "rbind"
+                    ],
+                    "RW": true,
+                    "Propagation": "rprivate"
+               },
+               {
+                    "Type": "bind",
+                    "Source": "/home/roby/Documenti/Github/SAWProject/public_html/db",
+                    "Destination": "/opt/lampp/var/mysql/mydb",
+                    "Driver": "",
+                    "Mode": "",
+                    "Options": [
+                         "rbind"
+                    ],
+                    "RW": true,
+                    "Propagation": "rprivate"
+               }
+          ],
+          "Dependencies": [],
+          "NetworkSettings": {
+               "EndpointID": "",
+               "Gateway": "",
+               "IPAddress": "",
+               "IPPrefixLen": 0,
+               "IPv6Gateway": "",
+               "GlobalIPv6Address": "",
+               "GlobalIPv6PrefixLen": 0,
+               "MacAddress": "",
+               "Bridge": "",
+               "SandboxID": "",
+               "HairpinMode": false,
+               "LinkLocalIPv6Address": "",
+               "LinkLocalIPv6PrefixLen": 0,
+               "Ports": {
+                    "22/tcp": [
+                         {
+                              "HostIp": "0.0.0.0",
+                              "HostPort": "2222"
+                         }
+                    ],
+                    "3306/tcp": null,
+                    "80/tcp": [
+                         {
+                              "HostIp": "0.0.0.0",
+                              "HostPort": "8080"
+                         }
+                    ]
+               },
+               "SandboxKey": "/run/user/1000/netns/netns-5f76e374-0374-a88e-ee88-70ec9e839455",
+               "Networks": {
+                    "sawproject_default": {
+                         "EndpointID": "",
+                         "Gateway": "10.89.0.1",
+                         "IPAddress": "10.89.0.2",
+                         "IPPrefixLen": 24,
+                         "IPv6Gateway": "",
+                         "GlobalIPv6Address": "",
+                         "GlobalIPv6PrefixLen": 0,
+                         "MacAddress": "1a:f4:50:9d:e8:27",
+                         "NetworkID": "sawproject_default",
+                         "DriverOpts": null,
+                         "IPAMConfig": null,
+                         "Links": null,
+                         "Aliases": [
+                              "xampp",
+                              "d148f220780d"
+                         ]
+                    }
+               }
+          },
+          "Namespace": "",
+          "IsInfra": false,
+          "IsService": false,
+          "KubeExitCodePropagation": "invalid",
+          "lockNumber": 1,
+          "Config": {
+               "Hostname": "d148f220780d",
+               "Domainname": "",
+               "User": "",
+               "AttachStdin": false,
+               "AttachStdout": false,
+               "AttachStderr": false,
+               "Tty": false,
+               "OpenStdin": false,
+               "StdinOnce": false,
+               "Env": [
+                    "container=podman",
+                    "DEBIAN_FRONTEND=noninteractive",
+                    "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                    "HOME=/root",
+                    "HOSTNAME=d148f220780d"
+               ],
+               "Cmd": [
+                    "/usr/bin/supervisord",
+                    "-n"
+               ],
+               "Image": "docker.io/tomsik68/xampp:latest",
+               "Volumes": null,
+               "WorkingDir": "/",
+               "Entrypoint": null,
+               "OnBuild": null,
+               "Labels": {
+                    "PODMAN_SYSTEMD_UNIT": "podman-compose@sawproject.service",
+                    "com.docker.compose.container-number": "1",
+                    "com.docker.compose.project": "sawproject",
+                    "com.docker.compose.project.config_files": "docker-compose.yaml",
+                    "com.docker.compose.project.working_dir": "/home/roby/Documenti/Github/SAWProject",
+                    "com.docker.compose.service": "xampp",
+                    "io.podman.compose.config-hash": "3e9ffaffcabbdcc53fdd3a4afa9eaa9f9d19ebd6ac46a1a710727d1fe97ed1ad",
+                    "io.podman.compose.project": "sawproject",
+                    "io.podman.compose.version": "1.2.0",
+                    "maintainer": "Tomas Jasek\u003ctomsik68 (at) gmail (dot) com\u003e"
+               },
+               "Annotations": {
+                    "io.container.manager": "libpod",
+                    "io.kubernetes.cri-o.SandboxID": "d08daf082acc516bd1f93f2370f4af64d7385f2af1ec033aac6b5e6b6e17a47d",
+                    "org.opencontainers.image.stopSignal": "15",
+                    "org.systemd.property.KillSignal": "15",
+                    "org.systemd.property.TimeoutStopUSec": "uint64 10000000"
+               },
+               "StopSignal": "SIGTERM",
+               "HealthcheckOnFailureAction": "none",
+               "CreateCommand": [
+                    "podman",
+                    "run",
+                    "--name=sawproject_xampp_1",
+                    "-d",
+                    "--pod=pod_sawproject",
+                    "--label",
+                    "io.podman.compose.config-hash=3e9ffaffcabbdcc53fdd3a4afa9eaa9f9d19ebd6ac46a1a710727d1fe97ed1ad",
+                    "--label",
+                    "io.podman.compose.project=sawproject",
+                    "--label",
+                    "io.podman.compose.version=1.2.0",
+                    "--label",
+                    "PODMAN_SYSTEMD_UNIT=podman-compose@sawproject.service",
+                    "--label",
+                    "com.docker.compose.project=sawproject",
+                    "--label",
+                    "com.docker.compose.project.working_dir=/home/roby/Documenti/Github/SAWProject",
+                    "--label",
+                    "com.docker.compose.project.config_files=docker-compose.yaml",
+                    "--label",
+                    "com.docker.compose.container-number=1",
+                    "--label",
+                    "com.docker.compose.service=xampp",
+                    "-v",
+                    "/home/roby/Documenti/Github/SAWProject/public_html:/opt/lampp/htdocs",
+                    "-v",
+                    "/home/roby/Documenti/Github/SAWProject/public_html/db:/opt/lampp/var/mysql/mydb",
+                    "--network=sawproject_default",
+                    "--network-alias=xampp",
+                    "-p",
+                    "2222:22",
+                    "-p",
+                    "8080:80",
+                    "--restart",
+                    "always",
+                    "tomsik68/xampp"
+               ],
+               "Umask": "0022",
+               "Timeout": 0,
+               "StopTimeout": 10,
+               "Passwd": true,
+               "sdNotifyMode": "container"
+          },
+          "HostConfig": {
+               "Binds": [
+                    "25fcc43dd2454f0cd3301e438df9a7732eb3bfb345183b53580040e5ae33071c:/opt/lampp/apache2/conf.d:rprivate,rw,nodev,exec,nosuid,rbind",
+                    "62cfd781cf80f71598cc95c502d4c16edbec9ab9081932e95f65f7a3aff9fc91:/var/log/apache2:rprivate,rw,nodev,exec,nosuid,rbind",
+                    "bfad21a0df16eb03151e69c0edee7aec7c84361a2f02778392826eab164e66a6:/var/log/mysql:rprivate,rw,nodev,exec,nosuid,rbind",
+                    "1e26809f094a9c5be13073c6b29c3b807628a8c1a9fbb2d51b69f74ab713347a:/www:rprivate,rw,nodev,exec,nosuid,rbind",
+                    "/home/roby/Documenti/Github/SAWProject/public_html:/opt/lampp/htdocs:rw,rprivate,rbind",
+                    "/home/roby/Documenti/Github/SAWProject/public_html/db:/opt/lampp/var/mysql/mydb:rw,rprivate,rbind"
+               ],
+               "CgroupManager": "systemd",
+               "CgroupMode": "private",
+               "ContainerIDFile": "",
+               "LogConfig": {
+                    "Type": "journald",
+                    "Config": null,
+                    "Path": "",
+                    "Tag": "",
+                    "Size": "0B"
+               },
+               "NetworkMode": "bridge",
+               "PortBindings": {
+                    "22/tcp": [
+                         {
+                              "HostIp": "0.0.0.0",
+                              "HostPort": "2222"
+                         }
+                    ],
+                    "80/tcp": [
+                         {
+                              "HostIp": "0.0.0.0",
+                              "HostPort": "8080"
+                         }
+                    ]
+               },
+               "RestartPolicy": {
+                    "Name": "always",
+                    "MaximumRetryCount": 0
+               },
+               "AutoRemove": false,
+               "Annotations": {
+                    "io.container.manager": "libpod",
+                    "io.kubernetes.cri-o.SandboxID": "d08daf082acc516bd1f93f2370f4af64d7385f2af1ec033aac6b5e6b6e17a47d",
+                    "org.opencontainers.image.stopSignal": "15",
+                    "org.systemd.property.KillSignal": "15",
+                    "org.systemd.property.TimeoutStopUSec": "uint64 10000000"
+               },
+               "VolumeDriver": "",
+               "VolumesFrom": null,
+               "CapAdd": [],
+               "CapDrop": [],
+               "Dns": [],
+               "DnsOptions": [],
+               "DnsSearch": [],
+               "ExtraHosts": [],
+               "GroupAdd": [],
+               "IpcMode": "shareable",
+               "Cgroup": "",
+               "Cgroups": "default",
+               "Links": null,
+               "OomScoreAdj": 0,
+               "PidMode": "private",
+               "Privileged": false,
+               "PublishAllPorts": false,
+               "ReadonlyRootfs": false,
+               "SecurityOpt": [],
+               "Tmpfs": {},
+               "UTSMode": "private",
+               "UsernsMode": "",
+               "ShmSize": 65536000,
+               "Runtime": "oci",
+               "ConsoleSize": [
+                    0,
+                    0
+               ],
+               "Isolation": "",
+               "CpuShares": 0,
+               "Memory": 0,
+               "NanoCpus": 0,
+               "CgroupParent": "user.slice/user-1000.slice/user@1000.service/user.slice/user-libpod_pod_d08daf082acc516bd1f93f2370f4af64d7385f2af1ec033aac6b5e6b6e17a47d.slice",
+               "BlkioWeight": 0,
+               "BlkioWeightDevice": null,
+               "BlkioDeviceReadBps": null,
+               "BlkioDeviceWriteBps": null,
+               "BlkioDeviceReadIOps": null,
+               "BlkioDeviceWriteIOps": null,
+               "CpuPeriod": 0,
+               "CpuQuota": 0,
+               "CpuRealtimePeriod": 0,
+               "CpuRealtimeRuntime": 0,
+               "CpusetCpus": "",
+               "CpusetMems": "",
+               "Devices": [],
+               "DiskQuota": 0,
+               "KernelMemory": 0,
+               "MemoryReservation": 0,
+               "MemorySwap": 0,
+               "MemorySwappiness": 0,
+               "OomKillDisable": false,
+               "PidsLimit": 2048,
+               "Ulimits": [
+                    {
+                         "Name": "RLIMIT_NOFILE",
+                         "Soft": 524288,
+                         "Hard": 524288
+                    },
+                    {
+                         "Name": "RLIMIT_NPROC",
+                         "Soft": 63322,
+                         "Hard": 63322
+                    }
+               ],
+               "CpuCount": 0,
+               "CpuPercent": 0,
+               "IOMaximumIOps": 0,
+               "IOMaximumBandwidth": 0,
+               "CgroupConf": null
+          }
+     }
+]

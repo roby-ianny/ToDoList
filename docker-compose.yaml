@@ -14,3 +14,7 @@ services:
       # - ./xampp/mysql/mydb:/opt/lampp/var/mysql/mydb
       - ./public_html/db:/opt/lampp/var/mysql/mydb
     restart: always
+    security_opt:
+      - label:type:xampp_container.process
+   
+

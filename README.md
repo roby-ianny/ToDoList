@@ -20,4 +20,7 @@ A scelta
 - Uso dell'immagine docker [tomsik68/xampp](https://hub.docker.com/r/tomsik68/xampp/)
 ```bash
 docker compose up -d --build
+
+# su fedora usando podman
+ label=type:xampp_container.process
 ```

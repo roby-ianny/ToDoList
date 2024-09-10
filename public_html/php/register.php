@@ -100,6 +100,7 @@ $stmt->execute();
 // setto le variabili di sessione per sapere se l'utente è loggato
 session_regenerate_id();
 $_SESSION["session_id"] = session_id();
-$_SESSION["session_user"] = $mail;
+$_SESSION["session_user"] = $userid;
+$con->close();
 header("location:  ../dashboard.php");
 exit();
