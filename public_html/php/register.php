@@ -102,5 +102,6 @@ session_regenerate_id();
 $_SESSION["session_id"] = session_id();
 $_SESSION["session_user"] = $userid;
 $con->close();
+$stmt->close();
 header("location:  ../dashboard.php");
 exit();

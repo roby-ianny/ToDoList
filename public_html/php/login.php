@@ -1,4 +1,6 @@
 <?php
+require_once("./tasksfunctions.php");
+
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] != "POST") {
@@ -27,19 +29,21 @@ if ($_POST["pass"]) {
   $errors[] = "Invalid password";
 }
 
-$con = new mysqli("localhost", "root", "", "todolist");
+$con = db_connection();
 
 $stmt = $con->prepare("SELECT Password,id FROM Users WHERE Email = ?");
 $stmt->bind_param("s", $mail);
 $stmt->execute();
 $result = $stmt->get_result();
-
+$stmt->close();
+$con->close();
 if ($result->num_rows > 0) {
   $db_pwd = $result->fetch_assoc();
   if (password_verify($passwd, $db_pwd["Password"])) {
     session_regenerate_id();
     $_SESSION["session_id"] = session_id();
     $_SESSION["session_user"] = $db_pwd["id"];
+
     header("location:  ../dashboard.php");
   } else {
     $errors[] = "Email o password non valida";

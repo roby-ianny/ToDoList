@@ -1,7 +1,7 @@
 <!-- navbar and header -->
-<?php include "./layouts/navbar.php"; ?>
+<?php require_once "./layouts/navbar.php"; ?>
 <!--page content -->
-<?php include "./php/checksession.php" ?>
+<?php require_once "./php/checksession.php" ?>
 <div class="container mt-5">
   <div class="table-responsive-sm">
     <table id="TasksTable" class="table table-hover table-bordered align-middle" style="text-align: center ;">

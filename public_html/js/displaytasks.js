@@ -6,14 +6,15 @@
         {"data": "TaskCreation", type: "date"},
         {"data": "TaskDue", type: "date"},
         {"data": "TaskRecurrency", type: "num"},
-        //{"data": "TaskDone", type: "num"},
         {
           "data": "TaskDone",
           "render": function (data, type, row) {
-            if (data === 1)
-              return  '<a class="btn btn-outline-success" href="../php/task_status_update.php?id=" + data.id +" >Fatto</a>';
-            else
-              return '<a class="btn btn-outline-danger" href="../php/task_status_update.php?id=" + data.id +">Da Fare</a>';
+              const status = data === 1 ? 'done' : 'not-done';
+              const buttonClass = data === 1 ? 'btn-outline-success' : 'btn-outline-danger';
+              const buttonText = data === 1 ? 'Fatto' : 'Da Fare';
+              if(data===1) console.log("task da fare");
+
+              return '<button class="btn ' + buttonClass + ' task-status" data-id="' + row.id + '" data-status="' + status + '">' + buttonText + '</button>';
           }
         },
         {"data": "TaskNotes", type: "string"},
@@ -28,3 +29,25 @@
       ]
     });
   });
+
+  // Aggiornamento del task fatto/da fare
+$('#TasksTable').on('click','.task-status', function () {
+    var taskId = $(this).data('id');
+    var status = $(this).data('status');
+
+    $.ajax({
+      url: '../php/task_status_update.php',
+      type: 'POST',
+      data: {
+        id: taskId,
+        status: status
+      },
+      success: function (response) {
+        console.log(response);
+        $('#TasksTable').DataTable().ajax.reload();
+      },
+      error: function(xhr, status, error){
+        console.error(error);
+      }
+    });
+})
