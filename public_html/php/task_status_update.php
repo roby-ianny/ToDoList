@@ -16,32 +16,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   $con = db_connection();
   // controllo se il task appartiene all'utente usando la sessione
-  $stmt = $con->prepare("
-    SELECT 
-      u.id AS UserId,
-      t.id AS TaskId
-    FROM
-      Tasks t
-    JOIN
-      Projects p ON t.Project = p.id
-    JOIN
-      Users u ON p.Creator = u.id
-    WHERE
-      t.id = ?
-    ");
-  $stmt->bind_param('i', $taskId);
-  $stmt->execute();
-  $result = $stmt->get_result();
-
-  if ($result->num_rows === 0) {
+  if (!(check_task_owner($con, $taskId))){
     echo json_encode(['success' => false, 'message' => 'Invalid input.']);
-  } else {
-    $result = $result->fetch_assoc();
-    if ($result['UserId'] !== $_SESSION['session_user'] || $result['TaskId'] !== $taskId) {
-      echo json_encode(['success' => false, 'message' => 'Invalid input.']);
-    }
-  }
-
+    $con->close();
+    exit();
+  } 
 
   $stmt = $con->prepare("UPDATE Tasks SET Done = ? WHERE id = ?");
   $stmt->bind_param('ii', $status, $taskId);

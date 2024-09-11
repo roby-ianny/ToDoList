@@ -177,7 +177,7 @@
             <mxRectangle width="30" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="RrJUnFSJMkI2O_1RerV--83" value="`Due` DATETIME" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;align=left;top=0;left=0;bottom=0;right=0;spacingLeft=6;rounded=1;labelBackgroundColor=none;" parent="RrJUnFSJMkI2O_1RerV--81" vertex="1">
+        <mxCell id="RrJUnFSJMkI2O_1RerV--83" value="`Due` DATE" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;align=left;top=0;left=0;bottom=0;right=0;spacingLeft=6;rounded=1;labelBackgroundColor=none;" parent="RrJUnFSJMkI2O_1RerV--81" vertex="1">
           <mxGeometry x="30" width="290" height="30" as="geometry">
             <mxRectangle width="290" height="30" as="alternateBounds" />
           </mxGeometry>

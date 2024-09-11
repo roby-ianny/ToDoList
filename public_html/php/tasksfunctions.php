@@ -1,5 +1,6 @@
-<?php 
-function db_connection(){
+<?php
+function db_connection()
+{
   $servername = "localhost";
   $username = "root";
   $password = "";
@@ -14,11 +15,43 @@ function db_connection(){
 
     return $con;
   } catch (Throwable $e) {
-    $con -> close();
+    echo "Errore: " . $e->getMessage();
+    $con->close();
     header("Location: error.php");
     return false;
   }
 }
 
-function insert_task(){
+// funzione che controlla il proprietario del task
+function check_task_owner(mysqli $con, int $task_id)
+{
+  session_start();
+
+  $stmt = $con->prepare("
+    SELECT 
+      u.id AS UserId,
+      t.id AS TaskId
+    FROM
+      Tasks t
+    JOIN
+      Projects p ON t.Project = p.id
+    JOIN
+      Users u ON p.Creator = u.id
+    WHERE
+      t.id = ?
+    ");
+
+  $stmt->bind_param('i', $task_id);
+  $stmt->execute();
+  $result = $stmt->get_result();
+  if ($result->num_rows === 0) {
+    return false;
+  } else {
+    $result = $result->fetch_assoc();
+    if ($result['UserId'] !== $_SESSION['session_user'] || $result['TaskId'] !== $task_id) {
+      return false;
+    }
+  }
+
+  return true;
 }
