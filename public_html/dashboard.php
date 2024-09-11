@@ -4,7 +4,7 @@
 <?php include "./php/checksession.php" ?>
 <div class="container mt-5">
   <div class="table-responsive-sm">
-    <table id="TasksTable" class="table table-hover table-bordered align-middle">
+    <table id="TasksTable" class="table table-hover table-bordered align-middle" style="text-align: center ;">
       <thead>
         <tr class="table-primary">
           <th>Nome</th>
@@ -22,41 +22,9 @@
       </tbody>
     </table>
     <!-- <a class="btn btn-primary" href="./add_task.php">Aggiungi Task</a> -->
-    <a class="btn btn-primary" href="./wip.php">Modifica</a>
+    <a class="btn btn-primary" href="./wip.php">Nuovo Task</a>
   </div>
 </div>
-
-<script>
-  $(document).ready(function () {
-    $('#TasksTable').DataTable({
-      "ajax": "./php/fetch_data.php", // Il file PHP che restituisce i dati
-      "columns": [
-        {"data": "TaskName", type: "string"},
-        {"data": "TaskCreation", type: "date"},
-        {"data": "TaskDue", type: "date"},
-        {"data": "TaskRecurrency", type: "num"},
-        //{"data": "TaskDone", type: "num"},
-        {
-          "data": "TaskDone",
-          "render": function (data, type, row) {
-            if (data === 1)
-              return '<input type="checkbox" checked>';
-            else
-              return '<input type="checkbox" >';
-          }
-        },
-        {"data": "TaskNotes", type: "string"},
-        {"data": "ProjectName", type: "string"},
-        {
-          "data": null,
-          "render": function (data, type, row) {
-            //return '<a class="btn btn-primary" href="./edit_task.php?id=' + data.id + '">Modifica</a>';
-            return '<a class="btn btn-primary" href="./wip.php">Modifica</a>';
-          }
-        }
-      ]
-    });
-  });
-</script>
+<script src="./js/displaytasks.js"></script>
 <!-- footer -->
 <?php include "./layouts/footer.php"; ?>

@@ -14,6 +14,7 @@ if ($con->connect_error) {
 $stmt = $con->prepare(
   "
   SELECT 
+         t.id AS id,
          t.Name AS TaskName,
          t.Creation AS TaskCreation,
          t.Due AS TaskDue,
