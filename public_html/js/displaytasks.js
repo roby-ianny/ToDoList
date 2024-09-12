@@ -3,8 +3,20 @@ $(document).ready(function() {
     "ajax": "../php/fetch_data.php", // Il file PHP che restituisce i dati
     "columns": [
       { "data": "TaskName", type: "string" },
-      { "data": "TaskCreation", type: "date" },
-      { "data": "TaskDue", type: "date" },
+      {
+        "data": "TaskCreation",
+        "render": function(data) {
+          return formatDate(data);
+        },
+        type: "date"
+      },
+      {
+        "data": "TaskDue",
+        "render": function(data) {
+          return formatDate(data);
+        },
+        type: "date"
+      },
       { "data": "TaskRecurrency", type: "num" },
       {
         "data": "TaskDone",
@@ -37,7 +49,20 @@ $(document).ready(function() {
       }
     ]
   });
+
+  // formattazione della data
+  function formatDate(dateString) {
+    if(dateString === null) return null;
+    const date = new Date(dateString);
+    const day = String(date.getDate()).padStart(2, '0');        // Giorno e eventuale zero 
+    const month = String(date.getMonth() + 1).padStart(2, '0'); // Mese e eventuale zero 
+    const year = date.getFullYear(); // Ottieni l'anno
+    return `${day}/${month}/${year}`;
+  }
 });
+
+
+
 
 // Aggiornamento del task fatto/da fare
 $('#TasksTable').on('click', '.task-status', function() {
@@ -88,7 +113,7 @@ $('#TasksTable').on('click', '.btn-primary[data-bs-target="#editTaskModal"]', fu
       $('#task-project').empty();
 
       // Popolo le opzioni 
-      projects.forEach(function(project){
+      projects.forEach(function(project) {
         $('#task-project').append(new
           Option(project.ProjectName, project.ProjectId));
       });
@@ -97,7 +122,5 @@ $('#TasksTable').on('click', '.btn-primary[data-bs-target="#editTaskModal"]', fu
       console.error(error);
     }
   });
-
-
 });
 

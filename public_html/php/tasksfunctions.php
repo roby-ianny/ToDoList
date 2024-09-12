@@ -55,3 +55,8 @@ function check_task_owner(mysqli $con, int $task_id)
 
   return true;
 }
+
+function isValidDate($date, $format) {
+    $d = DateTime::createFromFormat($format, $date);
+    return $d && $d->format($format) === $date;
+}

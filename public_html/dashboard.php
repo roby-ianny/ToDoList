@@ -39,7 +39,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form id="editTaskForm" action="./wip.php" method="post">
+        <form id="editTaskForm" action="./php/edit_task.php" method="post">
           <input type="hidden" id="task-id" name="task_id"> <!-- Campo nascosto per l'ID del task -->
           <div class="mb-3">
             <label for="task-name" class="col-form-label">Nome:</label>
