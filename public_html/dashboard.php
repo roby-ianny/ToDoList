@@ -61,6 +61,11 @@
             </select>
           </div>
           <div class="mb-3">
+            <label for="task-project" class="col-form-label">Progetto:</label>
+            <select class="form-control" id="task-project" name="task_project">
+            </select>
+          </div>
+          <div class="mb-3">
             <label for="task-notes" class="col-form-label">Note:</label>
             <textarea class="form-control" id="task-notes" name="task_notes"></textarea>
           </div>

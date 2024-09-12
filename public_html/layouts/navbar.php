@@ -7,6 +7,12 @@
   <title>ToDoList</title>
   <link href="./css/bootstrap.css" rel="stylesheet" />
   <link href="./css/styles.css" rel="stylesheet" />
+
+  <!-- favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+  <link rel="manifest" href="./favicon/site.webmanifest">
 </head>
 
 <body class="d-flex flex-column min-vh-100">
@@ -41,16 +47,16 @@
           </li>
         </ul>
         <form class="d-flex">
-          <?php 
-        session_start();
-        if(isset($_SESSION['session_id'])) {
-          echo '<a href="./php/logout.php">
+          <?php
+          session_start();
+          if (isset($_SESSION['session_id'])) {
+            echo '<a href="./php/logout.php">
           <button class="btn btn-outline-danger me-2" type="button">
             Logout
           </button>
         </a>';
-        } else {
-          echo '<a href="./login.php">
+          } else {
+            echo '<a href="./login.php">
             <button class="btn btn-outline-success me-2" type="button">
               Login
             </button>
@@ -60,8 +66,8 @@
               Registrati
             </button>
           </a>';
-        }
-        ?>
+          }
+          ?>
         </form>
       </div>
     </div>

@@ -1,14 +1,9 @@
 <?php
 session_start();
 
-include './tasksfunctions.php';
+require_once './tasksfunctions.php';
 
 $con = db_connection();
-
-// Check connection
-if ($con->connect_error) {
-    die("Connection failed: " . $con->connect_error);
-}
 
 // SQL query to select data
 $stmt = $con->prepare(
@@ -32,7 +27,11 @@ $stmt = $con->prepare(
 );
 $userid = $_SESSION['session_user'];
 $stmt->bind_param('i', $userid);
-$stmt->execute();
+if(!($stmt->execute())){
+  $stmt->close();
+  $con->close();
+  header('location: ../error.php');
+}
 $result = $stmt->get_result();
 
 $data = array();
@@ -52,5 +51,6 @@ echo json_encode(['data' => $data]);
 
 
 // Close the connection
+$stmt->close();
 $con->close();
 ?>
