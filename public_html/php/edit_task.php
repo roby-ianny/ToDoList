@@ -2,7 +2,7 @@
 require_once("./tasksfunctions.php");
 session_start();
 
-if ($_SERVER["REQUEST_METHOD"]!="POST"){
+if ($_SERVER["REQUEST_METHOD"] != "POST") {
   header("location: ../error.php");
   exit;
 }
@@ -14,22 +14,28 @@ $taskDue = isset($_POST['task_due']) ? trim($_POST['task_due']) : null;
 $taskRecurrency = isset($_POST['task_recurrency']) ? intval($_POST['task_recurrency']) : null;
 $taskStatus = isset($_POST['task_status']) ? intval($_POST['task_status']) : header('location: ../error.php');
 $taskNotes = isset($_POST['task_notes']) ? trim(htmlspecialchars($_POST['task_notes'])) : "";
-$taskProject = isset($_POST['task_project']) ? trim(htmlspecialchars($_POST['task_project'], ENT_SUBSTITUTE, null)) : header('location: ../error.php');
+$taskProject = isset($_POST['task_project']) ? intval($_POST['task_project'])  : header('location: ../error.php');
 
 
 // Controllo se il task appartiene all'utente usando la sessione
-if (!check_task_owner(db_connection(), $taskId)){
+if (!check_task_owner(db_connection(), $taskId)) {
+  header("location: ../error.php");
+  exit();
+}
+
+// Controllo se il progetto appartiene all'utente
+if (!check_project_owner(db_connection(), $taskProject)) {
   header("location: ../error.php");
   exit();
 }
 
 // Controllo se la data è valida e la nullo nel caso non lo fosse
 if (!(isValidDate($taskDue, "Y-m-d"))) {
- $taskDue = null; 
+  $taskDue = null;
 }
 
 // Se la recurrency è 0 o negativa allora la nullo
-$taskRecurrency = ($taskRecurrency > 0) ? $taskRecurrency : null ;
+$taskRecurrency = ($taskRecurrency > 0) ? $taskRecurrency : null;
 
 // Eseguo la query
 $con = db_connection();

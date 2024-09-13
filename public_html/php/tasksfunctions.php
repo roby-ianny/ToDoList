@@ -44,6 +44,8 @@ function check_task_owner(mysqli $con, int $task_id)
   $stmt->bind_param('i', $task_id);
   $stmt->execute();
   $result = $stmt->get_result();
+  $stmt->close();
+  $con->close();
   if ($result->num_rows === 0) {
     return false;
   } else {
@@ -56,7 +58,40 @@ function check_task_owner(mysqli $con, int $task_id)
   return true;
 }
 
-function isValidDate($date, $format) {
-    $d = DateTime::createFromFormat($format, $date);
-    return $d && $d->format($format) === $date;
+function check_project_owner(mysqli $con, $project_id)
+{
+  session_start();
+
+  $stmt = $con->prepare("
+    SELECT 
+      u.id AS UserId,
+      p.id AS ProjectId 
+    FROM
+      Projects p
+    JOIN
+      Users u ON p.Creator = u.id
+    WHERE
+      p.id = ?
+    ");
+
+  $stmt->bind_param('i', $project_id);
+  $stmt->execute();
+  $result = $stmt->get_result();
+  $stmt->close();
+  $con->close();
+  if ($result->num_rows === 0) {
+    return false;
+  } else {
+    $result = $result->fetch_assoc();
+    if ($result['UserId'] !== $_SESSION['session_user'] || $result['ProjectId'] !== $project_id) {
+      return false;
+    }
+  }
+  return true;
+}
+
+function isValidDate($date, $format)
+{
+  $d = DateTime::createFromFormat($format, $date);
+  return $d && $d->format($format) === $date;
 }

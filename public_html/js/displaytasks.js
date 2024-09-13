@@ -52,7 +52,7 @@ $(document).ready(function() {
 
   // formattazione della data
   function formatDate(dateString) {
-    if(dateString === null) return null;
+    if (dateString === null) return null;
     const date = new Date(dateString);
     const day = String(date.getDate()).padStart(2, '0');        // Giorno e eventuale zero 
     const month = String(date.getMonth() + 1).padStart(2, '0'); // Mese e eventuale zero 
@@ -86,7 +86,7 @@ $('#TasksTable').on('click', '.task-status', function() {
   });
 })
 
-// Passaggio dei dati al modal
+// Passaggio dei dati al modal per modificare i tasks
 $('#TasksTable').on('click', '.btn-primary[data-bs-target="#editTaskModal"]', function() {
   // Estrai i dati dal pulsante
   const taskId = $(this).data('id');
@@ -116,6 +116,27 @@ $('#TasksTable').on('click', '.btn-primary[data-bs-target="#editTaskModal"]', fu
       projects.forEach(function(project) {
         $('#task-project').append(new
           Option(project.ProjectName, project.ProjectId));
+      });
+    },
+    error: function(xhr, status, error) {
+      console.error(error);
+    }
+  });
+});
+
+//Passaggio dei progetti al modal per aggiungere i tasks
+$('#addTaskButton').on('click', function() {
+  // Prendo la lista dei progetti tramite ajax
+  $.ajax({
+    url: '../php/fetch_userprojects.php',
+    type: 'POST',
+    success: function(projects) {
+      // elimino le opzioni attuali nel form (anche se vuote)
+      $('#add-task-project').empty();
+
+      // Popolo le opzioni 
+      projects.forEach(function(project) {
+        $('#add-task-project').append(new Option(project.ProjectName, project.ProjectId));
       });
     },
     error: function(xhr, status, error) {
