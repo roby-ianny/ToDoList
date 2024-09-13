@@ -15,7 +15,7 @@ CREATE TABLE `Projects` (
   `Name` VARCHAR(255) NOT NULL,
   `Creator` INTEGER NOT NULL,
   PRIMARY KEY (`id`),
-  FOREIGN KEY (`Creator`) REFERENCES Users(`id`)
+  FOREIGN KEY (`Creator`) REFERENCES Users(`id`) ON DELETE CASCADE
 );
 
 CREATE TABLE `Tasks` (
@@ -28,6 +28,6 @@ CREATE TABLE `Tasks` (
   `Notes` TEXT,
   `Project` INTEGER NOT NULL,
   PRIMARY KEY (`id`),
-  FOREIGN KEY(`Project`) REFERENCES Projects(`id`)
+  FOREIGN KEY(`Project`) REFERENCES Projects(`id`) ON DELETE CASCADE
 );
 

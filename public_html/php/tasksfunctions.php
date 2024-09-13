@@ -54,7 +54,6 @@ function check_task_owner(mysqli $con, int $task_id)
       return false;
     }
   }
-
   return true;
 }
 

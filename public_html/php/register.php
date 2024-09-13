@@ -3,7 +3,7 @@ require_once("./tasksfunctions.php");
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] != "POST") {
-  echo "Invalid request";
+  header("location: ../error.php");
   exit;
 }
 
@@ -46,7 +46,7 @@ if (!empty($errors)) {
   exit();
 }
 // mi collego al db
-$con = db_connection(); 
+$con = db_connection();
 
 // controllo se l'utente già esiste
 $stmt = $con->prepare("SELECT * FROM Users WHERE Email = ?");
@@ -69,7 +69,7 @@ $stmt->execute();
 
 //Prendo l'id
 $userid = $con->insert_id;
-if (!($userid)){
+if (!($userid)) {
   header("location: ../error.php");
   exit();
 }
@@ -84,7 +84,7 @@ $stmt->execute();
 
 //TODO: aggiungere la creazione di un task di default
 $projectid = $con->insert_id;
-if (!($projectid)){
+if (!($projectid)) {
   header("location: ../error.php");
   exit();
 }

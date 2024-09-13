@@ -23,6 +23,7 @@
       </tbody>
     </table>
     <button id="addTaskButton" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addTaskModal">Nuovo Task</button>
+    <button id="addProjectButton" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addProjectModal">Nuovo Progetto</button>
   </div>
 </div>
 
@@ -34,6 +35,9 @@
 
 <!-- Modal per aggiungere un tasks -->
 <?php include_once "./layouts/add_task_modal.php"; ?>
+
+<!-- Modal per aggiungere un progetto -->
+<?php include_once "./layouts/add_project_modal.php"; ?>
 
 <!-- footer -->
 <?php include "./layouts/footer.php"; ?>
