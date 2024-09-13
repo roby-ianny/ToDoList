@@ -43,8 +43,13 @@ $(document).ready(function() {
               data-recurrency="${row.TaskRecurrency}" 
               data-status="${row.TaskDone}" 
               data-notes="${row.TaskNotes}">
-                Modifica
-              </button>`;
+              <i class="bi bi-pencil-square"></i>
+              </button>
+              <button type="button" class="btn btn-danger" 
+              onclick="deleteTask(${row.id})">
+              <i class="bi bi-trash"></i>
+              </button>`
+            ;
         }
       }
     ]
@@ -145,3 +150,21 @@ $('#addTaskButton').on('click', function() {
   });
 });
 
+function deleteTask(taskId) {
+  if (confirm("Sei sicuro di voler eliminare questo task?")) {
+    $.ajax({
+      url: '../php/delete_task.php',
+      type: 'POST',
+      data: {
+        id: taskId
+      },
+      success: function(response) {
+        console.log(response);
+        $('#TasksTable').DataTable().ajax.reload();
+      },
+      error: function(xhr, status, error) {
+        console.error(error);
+      }
+    });
+  }
+}
