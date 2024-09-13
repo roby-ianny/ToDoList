@@ -149,7 +149,28 @@ $('#addTaskButton').on('click', function() {
     }
   });
 });
+// Passaggio progetti al modal per eliminare i tasks
+$('#deleteProjectButton').on('click', function() {
+  // Prendo la lista dei progetti tramite ajax
+  $.ajax({
+    url: '../php/fetch_userprojects.php',
+    type: 'POST',
+    success: function(projects) {
+      // elimino le opzioni attuali nel form (anche se vuote)
+      $('#delete-project-id').empty();
 
+      // Popolo le opzioni 
+      projects.forEach(function(project) {
+        $('#delete-project-id').append(new Option(project.ProjectName, project.ProjectId));
+      });
+    },
+    error: function(xhr, status, error) {
+      console.error(error);
+    }
+  });
+});
+
+// Eliminazione dei tasks
 function deleteTask(taskId) {
   if (confirm("Sei sicuro di voler eliminare questo task?")) {
     $.ajax({

@@ -24,6 +24,7 @@
     </table>
     <button id="addTaskButton" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addTaskModal">Nuovo Task</button>
     <button id="addProjectButton" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addProjectModal">Nuovo Progetto</button>
+    <button id="deleteProjectButton" type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteProjectModal">Cancella Progetto</button>
   </div>
 </div>
 
@@ -38,6 +39,9 @@
 
 <!-- Modal per aggiungere un progetto -->
 <?php include_once "./layouts/add_project_modal.php"; ?>
+
+<!-- Modal per eliminare un progetto -->
+<?php include_once "./layouts/delete_project_modal.php"; ?>
 
 <!-- footer -->
 <?php include "./layouts/footer.php"; ?>

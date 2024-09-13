@@ -4,6 +4,12 @@ session_start();
 
 require_once './tasksfunctions.php';
 
+// Controllo se la richiesta è una POST 
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+  echo json_encode(['success' => false, 'message' => 'Invalid request method.']);
+  exit();
+}
+
 $taskId = (isset($_POST['id']) && is_numeric($_POST['id'])) ? intval($_POST['id']) : null;
 
 if (!($taskId) || $taskId < 0) {
