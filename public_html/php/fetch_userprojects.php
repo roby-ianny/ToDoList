@@ -38,15 +38,16 @@ if ($result->num_rows > 0) {
 } else {
   $stmt->close();
   $con->close();
-  header('location ../error.php');
+  $projects = [];
+  echo json_encode($projects);
+  exit();
 }
-
-// Ritorno i dati con un json
-header('Content-Type: application/json');
-echo json_encode($projects);
-
 // Chiudo statement e connessione
 $stmt->close();
 $con->close();
 
+// Ritorno i dati con un json
+header('Content-Type: application/json');
+echo json_encode($projects);
+exit();
 ?>

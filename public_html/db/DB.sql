@@ -4,6 +4,7 @@ CREATE OR REPLACE TABLE `Users` (
   `Lastname` VARCHAR(255) NOT NULL,
   `Email` VARCHAR(255) NOT NULL,
   `Password` VARCHAR(255) NOT NULL,
+  `Info` TEXT,
   PRIMARY KEY(`id`)
 );
 

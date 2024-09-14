@@ -42,20 +42,31 @@
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="./index.php">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="./dashboard.php">Dashboard</a>
-          </li>
+            </li>
+            <?php
+              session_start();
+              if (isset($_SESSION['session_id'])) {
+                echo '
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="./dashboard.php">Dashboard</a>
+                </li>';} 
+            ?>
         </ul>
         <form class="d-flex">
           <?php
-          session_start();
           if (isset($_SESSION['session_id'])) {
-            echo '<a href="./php/logout.php">
-          <button class="btn btn-outline-danger me-2" type="button">
-            Logout
-          </button>
-        </a>';
+            echo '
+            <a href="./profile.php">
+              <button class="btn btn-outline-primary me-2" type="button">
+                Profilo 
+              </button>
+            </a>
+            <a href="./php/logout.php">
+              <button class="btn btn-outline-danger me-2" type="button">
+                Logout
+              </button>
+            </a>
+            ';
           } else {
             echo '<a href="./login.php">
             <button class="btn btn-outline-success me-2" type="button">
