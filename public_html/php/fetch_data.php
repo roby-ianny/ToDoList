@@ -43,7 +43,7 @@ if ($result->num_rows > 0) {
         $data[] = $row;
     }
 } else {
-  $data = []; // array vuoto per evitare errori
+  $data = [];
 }
 
 // Return data as JSON

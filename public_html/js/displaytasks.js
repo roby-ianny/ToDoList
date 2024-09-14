@@ -55,7 +55,10 @@ $(document).ready(function() {
             ;
         }
       }
-    ]
+    ],
+    "language": {
+      "emptyTable": "Nessun task presente o nessun task trovato!" // Messaggio quando non ci sono dati
+    }
   });
 
   // formattazione della data
@@ -175,22 +178,20 @@ $('#deleteProjectButton').on('click', function() {
 
 // Eliminazione dei tasks
 function deleteTask(taskId) {
-  if (confirm("Sei sicuro di voler eliminare questo task?")) {
-    $.ajax({
-      url: '../php/delete_task.php',
-      type: 'POST',
-      data: {
-        id: taskId
-      },
-      success: function(response) {
-        console.log(response);
-        $('#TasksTable').DataTable().ajax.reload();
-      },
-      error: function(xhr, status, error) {
-        console.error(error);
-      }
-    });
-  }
+  $.ajax({
+    url: '../php/delete_task.php',
+    type: 'POST',
+    data: {
+      id: taskId
+    },
+    success: function(response) {
+      console.log(response);
+      $('#TasksTable').DataTable().ajax.reload();
+    },
+    error: function(xhr, status, error) {
+      console.error(error);
+    }
+  });
 }
 
 // Ricerca
@@ -207,9 +208,12 @@ $('#searchButton').on('click', function() {
       // Supponendo che il server restituisca i dati in formato JSON
       console.log(data);
       const dataTable = $('#TasksTable').DataTable();
-      dataTable.clear(); // Pulisci i dati esistenti
-      if(data.data && data.data.length > 0)
+
+      dataTable.clear().draw(); // Pulisci i dati esistenti
+      if (data.data && (data.data.length > 0) && !((data.data[0].length == 0))) {
+        console.log("sono nell'if statement!");
         dataTable.rows.add(data.data).draw();
+      }
     },
     error: function(xhr, status, error) {
       console.error(error);

@@ -5,7 +5,7 @@
 <!-- Tabella dei tasks -->
 <div class="container mt-5">
   <div class="row justify-content-center">
-    <div class="input-group">
+    <div class="input-group mb-3">
         <input type="search" id="searchInput" class="form-control" placeholder="Nome Task, Nome Progetto, Note ..."/>
       <button type="button" class="btn btn-primary" id="searchButton" data-mdb-ripple-init>
         <i class="bi bi-search"></i> Cerca
