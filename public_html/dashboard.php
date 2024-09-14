@@ -4,7 +4,16 @@
 <?php require_once "./php/checksession.php" ?>
 <!-- Tabella dei tasks -->
 <div class="container mt-5">
-  <div class="table-responsive-sm">
+  <div class="row justify-content-center">
+    <div class="input-group">
+        <input type="search" id="searchInput" class="form-control" placeholder="Nome Task, Nome Progetto, Note ..."/>
+      <button type="button" class="btn btn-primary" id="searchButton" data-mdb-ripple-init>
+        <i class="bi bi-search"></i> Cerca
+      </button>
+      <button type="button" class="btn btn-secondary" id="reloadTable"><i class="bi bi-arrow-clockwise"></i>Ripristina</button>
+    </div>
+  </div>
+  <div class="table-responsive">
     <table id="TasksTable" class="table table-hover table-bordered align-middle" style="text-align: center ;">
       <thead>
         <tr class="table-primary">

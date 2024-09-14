@@ -31,6 +31,7 @@ if(!($stmt->execute())){
   $stmt->close();
   $con->close();
   header('location: ../error.php');
+  exit();
 }
 $result = $stmt->get_result();
 
@@ -42,7 +43,7 @@ if ($result->num_rows > 0) {
         $data[] = $row;
     }
 } else {
-  $data[] = $userid;
+  $data = []; // array vuoto per evitare errori
 }
 
 // Return data as JSON
@@ -53,4 +54,5 @@ echo json_encode(['data' => $data]);
 // Close the connection
 $stmt->close();
 $con->close();
+exit();
 ?>

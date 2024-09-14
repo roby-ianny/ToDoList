@@ -1,6 +1,7 @@
 $(document).ready(function() {
   $('#TasksTable').DataTable({
     "ajax": "../php/fetch_data.php", // Il file PHP che restituisce i dati
+    "searching": false,
     "columns": [
       { "data": "TaskName", type: "string" },
       {
@@ -23,7 +24,7 @@ $(document).ready(function() {
         "render": function(data, type, row) {
           const status = data === 1 ? 'done' : 'not-done';
           const buttonClass = data === 1 ? 'btn-outline-success' : 'btn-outline-danger';
-          const buttonText = data === 1 ? 'Fatto' : 'Da Fare';
+          const buttonText = data === 1 ? '<i class="bi bi-check2-circle"></i> Fatto' : '<i class="bi bi-circle"></i> Da Fare';
           if (data === 1) console.log("task da fare");
 
           return '<button class="btn ' + buttonClass + ' task-status" data-id="' + row.id + '" data-status="' + status + '">' + buttonText + '</button>';
@@ -34,7 +35,7 @@ $(document).ready(function() {
       {
         "data": null,
         "render": function(data, type, row) {
-          return `<button type="button" class="btn btn-primary" 
+          return `<button type="button" class="btn btn-primary" value="Modifica Task"
               data-bs-toggle="modal" 
               data-bs-target="#editTaskModal" 
               data-id="${row.id}" 
@@ -44,10 +45,12 @@ $(document).ready(function() {
               data-status="${row.TaskDone}" 
               data-notes="${row.TaskNotes}">
               <i class="bi bi-pencil-square"></i>
+              Modifica
               </button>
-              <button type="button" class="btn btn-danger" 
+              <button type="button" class="btn btn-danger" value="Elimina Task"
               onclick="deleteTask(${row.id})">
               <i class="bi bi-trash"></i>
+              Elimina
               </button>`
             ;
         }
@@ -189,3 +192,32 @@ function deleteTask(taskId) {
     });
   }
 }
+
+// Ricerca
+$('#searchButton').on('click', function() {
+  const searchTerm = $('#searchInput').val();
+
+  $.ajax({
+    url: '../php/search_data.php',
+    type: 'GET',
+    data: {
+      search: searchTerm // Invia il termine di ricerca al server
+    },
+    success: function(data) {
+      // Supponendo che il server restituisca i dati in formato JSON
+      console.log(data);
+      const dataTable = $('#TasksTable').DataTable();
+      dataTable.clear(); // Pulisci i dati esistenti
+      if(data.data && data.data.length > 0)
+        dataTable.rows.add(data.data).draw();
+    },
+    error: function(xhr, status, error) {
+      console.error(error);
+    }
+  });
+});
+
+// Ricarica tabella
+$('#reloadTable').on('click', function() {
+  $('#TasksTable').DataTable().ajax.reload();
+})
