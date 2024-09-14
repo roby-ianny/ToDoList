@@ -31,7 +31,7 @@ function update($email, $first_name, $last_name, $baseurl) {
     $result = curl_exec($ch);
 
     /* Delete comment below to see what is returned */
-    // echo $result;
+    /*echo $result;*/
 
     if (curl_errno($ch)) {
         echo 'Error:' . curl_error($ch);

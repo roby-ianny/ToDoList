@@ -9,7 +9,7 @@
             echo '<div class="alert alert-warning" role="alert">'. $_SESSION["errors"] .'. Riprova</div>';
           }
         ?>
-      <form action="./php/register.php" method="post">
+      <form action="./php/registration.php" method="post">
         <div class="mb-3">
           <label for="firstname" class="form-label">Nome</label>
           <input type="text" class="form-control" name="firstname">
