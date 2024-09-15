@@ -17,7 +17,7 @@
             <input type="date" class="form-control" id="task-due" name="task_due">
           </div>
           <div class="mb-3">
-            <label for="task-recurrency" class="col-form-label">Ricorrenza:</label>
+            <label for="task-recurrency" class="col-form-label">Ricorrenza (in giorni):</label>
             <input type="number" class="form-control" id="task-recurrency" name="task_recurrency">
           </div>
           <div class="mb-3">

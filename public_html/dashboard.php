@@ -20,7 +20,7 @@
           <th>Nome</th>
           <th>Creazione</th>
           <th>Scadenza</th>
-          <th>Ricorrenza</th>
+          <th>Ricorrenza (in giorni)</th>
           <th>Stato</th>
           <th>Note</th>
           <th>Progetto</th>
