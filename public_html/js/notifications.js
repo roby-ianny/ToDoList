@@ -18,13 +18,13 @@ function checkNotificationPermission() {
   }
 }
 
-function displayNotification(body) {
+function showNotfication(body) {
   if (Notification.permission == 'granted') {
-    var notification = new Notification("ToDoList", {
+    new Notification("ToDoList", {
       body: body
     });
-    notification.displayNotification();
   }
+  return;
 }
 
 function setReminder(date, time, body) {
@@ -40,7 +40,8 @@ function setReminder(date, time, body) {
   }
 
   setTimeout(() => {
-    displayNotification(body);
+    showNotfication(body);
+    console.log("Notifica inviata");
   }, timeUntilReminder)
 }
 

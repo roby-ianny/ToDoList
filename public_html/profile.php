@@ -27,7 +27,7 @@
       </div>
       <div class="col-md-4">
         <label for="email" class="form-label">Mail</label>
-        <input type="text" class="form-control" id="email" name="mail">
+        <input type="text" class="form-control" id="email" name="email">
       </div>
       <div class="col-12">
         <label for="profileinfo" class="form-label">Su di te</label>

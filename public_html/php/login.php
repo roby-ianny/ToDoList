@@ -15,8 +15,8 @@ if (isset($_SESSION['session_id'])) {
 
 $errors = [];
 
-if ($_POST["mail"]) {
-  $mail = filter_var($_POST["mail"], FILTER_SANITIZE_EMAIL);
+if ($_POST["email"]) {
+  $mail = filter_var($_POST["email"], FILTER_SANITIZE_EMAIL);
 
   if (!filter_var($mail, FILTER_VALIDATE_EMAIL)) {
     $errors[] = "Invalid email";
