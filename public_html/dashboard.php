@@ -40,6 +40,9 @@
 <!-- Script per mostrare i tasks nella tabella-->
 <script src="./js/displaytasks.js"></script>
 
+<!-- Script per la gestione delle notifiche -->
+<script src="./js/notifications.js"></script>
+
 <!-- Modal per modificare il task -->
 <?php include_once "./layouts/edit_task_modal.php"; ?>
 
@@ -51,6 +54,9 @@
 
 <!-- Modal per eliminare un progetto -->
 <?php include_once "./layouts/delete_project_modal.php"; ?>
+
+<!-- Modal per impostare i promemoria -->
+<?php include_once "./layouts/reminder_modal.php"; ?>
 
 <!-- footer -->
 <?php include "./layouts/footer.php"; ?>

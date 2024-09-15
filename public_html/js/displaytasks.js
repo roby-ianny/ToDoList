@@ -35,26 +35,35 @@ $(document).ready(function() {
       {
         "data": null,
         "render": function(data, type, row) {
-          return `<button type="button" class="btn btn-primary" value="Modifica Task"
-              data-bs-toggle="modal" 
-              data-bs-target="#editTaskModal" 
-              data-id="${row.id}" 
-              data-name="${row.TaskName}" 
-              data-due="${row.TaskDue}" 
-              data-recurrency="${row.TaskRecurrency}" 
-              data-status="${row.TaskDone}" 
-              data-notes="${row.TaskNotes}">
-              <i class="bi bi-pencil-square"></i>
-              Modifica
-              </button>
-              <button type="button" class="btn btn-danger" value="Elimina Task"
-              onclick="deleteTask(${row.id})">
-              <i class="bi bi-trash"></i>
-              Elimina
-              </button>`
-            ;
+          return `
+          <button type="button" class="btn btn-primary" value="Modifica Task"
+          data-bs-toggle="modal" 
+          data-bs-target="#editTaskModal" 
+          data-id="${row.id}" 
+          data-name="${row.TaskName}" 
+          data-due="${row.TaskDue}" 
+          data-recurrency="${row.TaskRecurrency}" 
+          data-status="${row.TaskDone}" 
+          data-notes="${row.TaskNotes}">
+          <i class="bi bi-pencil-square"></i>
+          Modifica
+          </button>
+          <button type="button" class="btn btn-danger" value="Elimina Task"
+          onclick="deleteTask(${row.id})">
+          <i class="bi bi-trash"></i>
+          Elimina
+          </button>
+          <button type="button" class="btn btn-warning" value="Ricordamelo" data-bs-toggle="modal" data-bs-target="#setReminderModal"
+            data-remindername="${row.TaskName}" 
+            data-reminderdate="${row.TaskDue}"
+          >
+          <i class="bi bi-bell"></i>
+          Ricordamelo
+          </button>
+          `;
         }
       }
+
     ],
     "language": {
       "emptyTable": "Nessun task presente o nessun task trovato!" // Messaggio quando non ci sono dati
@@ -96,6 +105,20 @@ $('#TasksTable').on('click', '.task-status', function() {
     }
   });
 })
+
+// Passaggio dei dati al modal dei promemoria
+$('#TasksTable').on('click', '.btn-warning[data-bs-target="#setReminderModal"]', function() {
+  const taskname = $(this).data('remindername');
+  const reminderdate = $(this).data('reminderdate');
+  var remindertime = new Date();
+  remindertime = remindertime.getHours() + ":" + remindertime.getMinutes();
+
+  console.log(taskname, reminderdate);
+  $('#reminder-name').val(taskname);
+  $('#reminder-date').val(reminderdate);
+  $('#reminder-time').val(remindertime);
+});
+
 
 // Passaggio dei dati al modal per modificare i tasks
 $('#TasksTable').on('click', '.btn-primary[data-bs-target="#editTaskModal"]', function() {
