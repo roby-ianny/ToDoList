@@ -20,7 +20,7 @@
   <!-- Including bootsrap javascript -->
   <script src="./js/bootstrap.bundle.js" crossorigin="anonymous"></script>
   <!-- Including jquery -->
-  <script src='../js/jquery-3.7.1.min.js' crossorigin="anonymous"></script>
+  <script src='./js/jquery-3.7.1.min.js' crossorigin="anonymous"></script>
   <!-- Including DataTables -->
   <link rel="stylesheet" href="https://cdn.datatables.net/2.1.5/css/dataTables.dataTables.css" />
 
