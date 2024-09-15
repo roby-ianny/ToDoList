@@ -1,6 +1,6 @@
 $(document).ready(function() {
   $.ajax({
-    url: '../php/show_profile.php',
+    url: './php/show_profile.php',
     type: 'POST',
     success: function(response) {
       console.log(response);

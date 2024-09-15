@@ -3,7 +3,7 @@ $(document).ready(function() {
     console.log("Pulsante cliccato");
     if (confirm("Sei sicuro di voler eliminare il tuo profilo?")) {
       $.ajax({
-        url: '../php/delete_profile.php',
+        url: './php/delete_profile.php',
         type: 'POST',
         success: function(response) {
           console.log(response);

@@ -1,6 +1,6 @@
 $(document).ready(function() {
   $('#TasksTable').DataTable({
-    "ajax": "../php/fetch_data.php", // Il file PHP che restituisce i dati
+    "ajax": "./php/fetch_data.php", // Il file PHP che restituisce i dati
     "searching": false,
     "columns": [
       { "data": "TaskName", type: "string" },
@@ -81,7 +81,7 @@ $('#TasksTable').on('click', '.task-status', function() {
   var status = $(this).data('status');
 
   $.ajax({
-    url: '../php/task_status_update.php',
+    url: './php/task_status_update.php',
     type: 'POST',
     data: {
       id: taskId,
@@ -117,7 +117,7 @@ $('#TasksTable').on('click', '.btn-primary[data-bs-target="#editTaskModal"]', fu
 
   // Prendo la lista dei progetti tramite ajax
   $.ajax({
-    url: '../php/fetch_userprojects.php',
+    url: './php/fetch_userprojects.php',
     type: 'POST',
     success: function(projects) {
       // elimino le opzioni attuali nel form (anche se vuote)
@@ -139,7 +139,7 @@ $('#TasksTable').on('click', '.btn-primary[data-bs-target="#editTaskModal"]', fu
 $('#addTaskButton').on('click', function() {
   // Prendo la lista dei progetti tramite ajax
   $.ajax({
-    url: '../php/fetch_userprojects.php',
+    url: './php/fetch_userprojects.php',
     type: 'POST',
     success: function(projects) {
       // elimino le opzioni attuali nel form (anche se vuote)
@@ -159,7 +159,7 @@ $('#addTaskButton').on('click', function() {
 $('#deleteProjectButton').on('click', function() {
   // Prendo la lista dei progetti tramite ajax
   $.ajax({
-    url: '../php/fetch_userprojects.php',
+    url: './php/fetch_userprojects.php',
     type: 'POST',
     success: function(projects) {
       // elimino le opzioni attuali nel form (anche se vuote)
@@ -179,7 +179,7 @@ $('#deleteProjectButton').on('click', function() {
 // Eliminazione dei tasks
 function deleteTask(taskId) {
   $.ajax({
-    url: '../php/delete_task.php',
+    url: './php/delete_task.php',
     type: 'POST',
     data: {
       id: taskId
@@ -199,7 +199,7 @@ $('#searchButton').on('click', function() {
   const searchTerm = $('#searchInput').val();
 
   $.ajax({
-    url: '../php/search_data.php',
+    url: './php/search_data.php',
     type: 'GET',
     data: {
       search: searchTerm // Invia il termine di ricerca al server
