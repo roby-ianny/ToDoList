@@ -7,7 +7,6 @@
   <title>ToDoList</title>
   <link href="./css/bootstrap.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <link href="./css/styles.css" rel="stylesheet" />
 
   <!-- favicon -->
   <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
@@ -22,13 +21,12 @@
   <!-- Including jquery -->
   <script src='./js/jquery-3.7.1.min.js' crossorigin="anonymous"></script>
   <!-- Including DataTables -->
-  <link rel="stylesheet" href="https://cdn.datatables.net/2.1.5/css/dataTables.dataTables.css" />
+  <link href="https://cdn.datatables.net/v/dt/dt-2.1.6/r-3.0.3/datatables.min.css" rel="stylesheet">
 
-  <script src="https://cdn.datatables.net/2.1.5/js/dataTables.js"></script>
-
+  <script src="https://cdn.datatables.net/v/dt/dt-2.1.6/r-3.0.3/datatables.min.js"></script>
   <!-- Navbar -->
 
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary mb-3">
     <div class="container-fluid">
       <a class="navbar-brand" href="./index.php">
         <img src="./images/check2-square.svg" alt="Checkbox logo" width="30" height="30" />
@@ -41,40 +39,56 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="./index.php">Home</a>
-            </li>
-            <?php
-              session_start();
-              if (isset($_SESSION['session_id'])) {
-                echo '
+            <a class="nav-link active" aria-current="page" href="./index.php">
+              <i class="bi bi-house"></i>
+              Home
+            </a>
+          </li>
+          <?php
+          session_start();
+          if (isset($_SESSION['session_id'])) {
+            echo '
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="./dashboard.php">Dashboard</a>
-                </li>';} 
-            ?>
+                  <a class="nav-link active" aria-current="page" href="./dashboard.php">
+                    <i class="bi bi-layout-text-sidebar-reverse"></i>
+                    Dashboard</a>
+                </li>';
+          }
+          ?>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="./wip.php">
+              <i class="bi bi-wallet2"></i>
+              Pricing
+            </a>
+          </li>
         </ul>
         <form class="d-flex">
           <?php
           if (isset($_SESSION['session_id'])) {
             echo '
             <a href="./profile.php">
-              <button class="btn btn-outline-primary me-2" type="button">
-                Profilo 
+            <button class="btn btn-outline-primary me-2" type="button">
+              <i class="bi bi-person-circle"></i>
+              Profilo 
               </button>
             </a>
             <a href="./php/logout.php">
-              <button class="btn btn-outline-danger me-2" type="button">
-                Logout
+            <button class="btn btn-outline-dark me-2" type="button">
+              <i class="bi bi-box-arrow-left"></i>
+              Logout
               </button>
             </a>
             ';
           } else {
             echo '<a href="./login.php">
-            <button class="btn btn-outline-success me-2" type="button">
+            <button class="btn btn-outline-primary me-2" type="button">
+              <i class="bi bi-box-arrow-in-right"></i>
               Login
             </button>
           </a>
           <a href="./registration.php">
-            <button class="btn btn-outline-success me-2" type="button">
+            <button class="btn btn-outline-dark me-2" type="button">
+              <i class="bi bi-person-vcard"></i>
               Registrati
             </button>
           </a>';

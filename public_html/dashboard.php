@@ -14,7 +14,7 @@
     </div>
   </div>
   <div class="table-responsive">
-    <table id="TasksTable" class="table table-hover table-bordered align-middle" style="text-align: center ;">
+    <table id="TasksTable" class="table table-hover align-middle" style="text-align: center ;">
       <thead>
         <tr class="table-primary">
           <th>Nome</th>

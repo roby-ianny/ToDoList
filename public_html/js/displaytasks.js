@@ -1,5 +1,6 @@
 $(document).ready(function() {
   $('#TasksTable').DataTable({
+    "responsive": true,
     "ajax": "./php/fetch_data.php", // Il file PHP che restituisce i dati
     "searching": false,
     "columns": [
@@ -48,17 +49,17 @@ $(document).ready(function() {
           <i class="bi bi-pencil-square"></i>
           Modifica
           </button>
-          <button type="button" class="btn btn-danger" value="Elimina Task"
-          onclick="deleteTask(${row.id})">
-          <i class="bi bi-trash"></i>
-          Elimina
-          </button>
           <button type="button" class="btn btn-warning" value="Ricordamelo" data-bs-toggle="modal" data-bs-target="#setReminderModal"
             data-remindername="${row.TaskName}" 
             data-reminderdate="${row.TaskDue}"
           >
           <i class="bi bi-bell"></i>
           Ricordamelo
+          </button>
+          <button type="button" class="btn btn-danger" value="Elimina Task"
+          onclick="deleteTask(${row.id})">
+          <i class="bi bi-trash"></i>
+          Elimina
           </button>
           `;
         }
@@ -109,11 +110,12 @@ $('#TasksTable').on('click', '.task-status', function() {
 // Passaggio dei dati al modal dei promemoria
 $('#TasksTable').on('click', '.btn-warning[data-bs-target="#setReminderModal"]', function() {
   const taskname = $(this).data('remindername');
-  const reminderdate = $(this).data('reminderdate');
+  var reminderdate = $(this).data('reminderdate');
+  // Se non c'è nessuna data di scadenza allora metto la data di oggi
+  if (reminderdate == null) reminderdate = (new Date()).toISOString().split('T')[0];
   var remindertime = new Date();
   remindertime = remindertime.getHours() + ":" + remindertime.getMinutes();
 
-  console.log(taskname, reminderdate);
   $('#reminder-name').val(taskname);
   $('#reminder-date').val(reminderdate);
   $('#reminder-time').val(remindertime);
