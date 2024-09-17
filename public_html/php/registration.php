@@ -11,12 +11,18 @@ $errors = [];
 
 if ($_POST["firstname"]) {
   $firstname = trim(htmlspecialchars($_POST["firstname"], ENT_SUBSTITUTE, null));
+  if (!check_name($firstname)) {
+    $errors[] = "Nome non valido";
+  }
 } else {
   $errors[] = "Nome mancante";
 }
 
 if ($_POST["lastname"]) {
   $lastname = trim(htmlspecialchars($_POST["lastname"], ENT_SUBSTITUTE, null));
+  if (!check_name($lastname)) {
+    $errors[] = "Cognome non valido";
+  }
 } else {
   $errors[] = "Cognome Mancante";
 }
@@ -34,7 +40,11 @@ if ($_POST["pass"] && $_POST["confirm"]) {
   if ($pass != $confirm) {
     $errors[] = "Le password non corrispondono";
   } else {
-    $passwd = password_hash(trim($_POST["pass"]), PASSWORD_DEFAULT);
+    if (!check_password($pass)) {
+      $errors[] = "Password non valida";
+    } else {
+      $passwd = password_hash(trim($_POST["pass"]), PASSWORD_DEFAULT);
+    }
   }
 } else {
   $errors[] = "Password non valida e/o mancante";

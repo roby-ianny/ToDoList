@@ -12,13 +12,19 @@ if ($_SERVER["REQUEST_METHOD"] != "POST") {
 $errors = []; // Inizializza l'array degli errori
 
 if ($_POST["firstname"]) {
-  $firstname = trim(htmlspecialchars($_POST["firstname"], ENT_SUBSTITUTE, null));
+  if (!check_name($_POST["firstname"]))
+    $errors[] = "Nome non valido";
+  else
+    $firstname = trim(htmlspecialchars($_POST["firstname"], ENT_SUBSTITUTE, null));
 } else {
   $errors[] = "Nome mancante";
 }
 
 if ($_POST["lastname"]) {
-  $lastname = trim(htmlspecialchars($_POST["lastname"], ENT_SUBSTITUTE, null));
+  if (!check_name($_POST["lastname"]))
+    $errors[] = "Cognome non valido";
+  else
+    $lastname = trim(htmlspecialchars($_POST["lastname"], ENT_SUBSTITUTE, null));
 } else {
   $errors[] = "Cognome mancante";
 }

@@ -14,8 +14,8 @@ require 'utils.php';
 /*                                            */
 /* DO NOT UPLOAD TEST FILES ON SAW21!         */
 /**********************************************/
-$baseurl = "https://saw21.dibris.unige.it/~S5201538/php"; 
-
+/*$baseurl = "https://saw21.dibris.unige.it/~S5201538/php"; */
+$baseurl = "http://localhost:8080/php";
 echo "[+] Testing Registration - Login - Show Profile\n";
 
 echo "[*] Generating random user\n";

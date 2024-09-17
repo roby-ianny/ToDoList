@@ -94,3 +94,13 @@ function isValidDate($date, $format)
   $d = DateTime::createFromFormat($format, $date);
   return $d && $d->format($format) === $date;
 }
+
+function check_name($name)
+{
+  return preg_match('/^[\p{L}\s]+$/u', $name);
+}
+
+function check_password($password)
+{
+  return preg_match('/^(?=.{8,})([a-zA-Z0-9!@#$%^&*()_+={}$$$$:;"\'<>,.?~`-]+)$/', $password);
+}

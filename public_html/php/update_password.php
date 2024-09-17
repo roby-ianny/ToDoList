@@ -28,6 +28,10 @@ if ($_POST["confirm"]){
   $errors[] = "Conferma password mancante";
 }
 
+if (!check_password($password)) {
+  $errors[] = "Nuova password non valida";
+}
+
 if (!empty($errors)) {
   $_SESSION["errors"] = $errors[0];
   header("location: ../profile.php");
