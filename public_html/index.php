@@ -69,7 +69,7 @@
         <div class="col-md-10">
           <div class="card-body">
             <h5 class="card-title">Chi sono?</h5>
-            <p class="card-text">Sono un appassionato di tecnologia e software open source. Fin da giovane, ho sempre avuto una curiosità innata per il mondo digitale e per tutto ciò che riguarda l'innovazione. Mi piace esplorare nuove idee e sperimentare con progetti che sfidano i confini della creatività. <br>
+            <p class="card-text">Sono un appassionato di tecnologia e software open source. Fin da piccolo, ho sempre avuto una curiosità innata per il mondo digitale e per tutto ciò che riguarda l'innovazione. Mi piace esplorare nuove idee e sperimentare con progetti che sfidano i confini della creatività. <br>
 
               Oltre alla mia passione per la tecnologia, sono un grande fan di anime e manga. Trovo che queste forme d'arte raccontino storie incredibili e offrano mondi fantastici da esplorare. Non posso resistere a una buona serie o a un manga avvincente! <br>
 
@@ -80,27 +80,29 @@
     </div>
   </div>
 
-  <div class="row mb-5">
-    <div id="carouselMemes" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="./images/memes//bartsimpson.jpg" class="d-block w-100"
-            alt="Bart Simpson che scrive alla lavagna che non inizierà più dei progetti extra finchè non completerà quelli iniziati">
-        </div>
-        <div class="carousel-item">
-          <img src="./images/memes/dogememe.jpg" class="d-block w-100" alt="Immagine di un cane">
-        </div>
-        <div class="carousel-item">
-          <img src="./images/memes/htmlbaby.jpg" class="d-block w-100" alt="Bebè che dice che HTML è un linguaggio di programmazione">
-        </div>
-        <div class="carousel-item">
-          <img src="./images/memes/htmlbatman.jpg" class="d-block w-100" alt="Robin che dice che HTML è un linguaggio di programmazione e batman giustamente lo mena">
-        </div>
-        <div class="carousel-item">
-          <img src="./images/memes/javascriptframeworks.jpg" class="d-block w-100" alt="Pagliaccio hit che invita un bambino a entrare in un tombino perchè ha un nuovo framework di javascript">
-        </div>
-        <div class="carousel-item">
-          <img src="./images/memes/phpnono.png" class="d-block w-100" alt="Cane che rifiuta del cibo e sul cibo c'è scritto PHP">
+  <div class="row mb-5 justify-content-center">
+    <div class="col-md-6">
+      <div id="carouselMemes" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="./images/memes//bartsimpson.jpg" class="d-block w-100"
+              alt="Bart Simpson che scrive alla lavagna che non inizierà più dei progetti extra finchè non completerà quelli iniziati">
+          </div>
+          <div class="carousel-item">
+            <img src="./images/memes/dogememe.jpg" class="d-block w-100" alt="Immagine di un cane">
+          </div>
+          <div class="carousel-item">
+            <img src="./images/memes/htmlbaby.jpg" class="d-block w-100" alt="Bebè che dice che HTML è un linguaggio di programmazione">
+          </div>
+          <div class="carousel-item">
+            <img src="./images/memes/htmlbatman.jpg" class="d-block w-100" alt="Robin che dice che HTML è un linguaggio di programmazione e batman giustamente lo mena">
+          </div>
+          <div class="carousel-item">
+            <img src="./images/memes/javascriptframeworks.jpg" class="d-block w-100" alt="Pagliaccio hit che invita un bambino a entrare in un tombino perchè ha un nuovo framework di javascript">
+          </div>
+          <div class="carousel-item">
+            <img src="./images/memes/phpnono.png" class="d-block w-100" alt="Cane che rifiuta del cibo e sul cibo c'è scritto PHP">
+          </div>
         </div>
       </div>
     </div>

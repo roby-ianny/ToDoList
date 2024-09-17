@@ -1,4 +1,4 @@
-<div class="modal fade" id="updatePasswordModal" tabindex="-2" aria-labelledby="updatePasswordModalLabel" aria-hidden="true">
+<div class="modal fade" id="updatePasswordModal" tabindex="-2" aria-labelledby="updatePasswordModal" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -12,11 +12,11 @@
             <input type="password" class="form-control" id="old-password" name="old-password" required>
           </div>
           <div class="mb-3">
-            <label for="old-password" class="col-form-label">Nuova Password:</label>
+            <label for="password" class="col-form-label">Nuova Password:</label>
             <input type="password" class="form-control" id="password" name="password" required>
           </div>
           <div class="mb-3">
-            <label for="old-password" class="col-form-label">Nuova Password (conferma):</label>
+            <label for="confirm" class="col-form-label">Nuova Password (conferma):</label>
             <input type="password" class="form-control" id="confirm" name="confirm" required>
           </div>
         </div>
