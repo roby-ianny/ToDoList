@@ -6,7 +6,7 @@
 <div class="container mt-5">
   <div class="row justify-content-center">
     <div class="input-group mb-3">
-        <input type="search" id="searchInput" class="form-control" placeholder="Nome Task, Nome Progetto, Note ..."/>
+        <input type="search" id="searchInput" class="form-control" aria-label="Search" placeholder="Task, Progetto, Note ..."/>
       <button type="button" class="btn btn-primary" id="searchButton" data-mdb-ripple-init>
         <i class="bi bi-search"></i> Cerca
       </button>
@@ -14,9 +14,9 @@
     </div>
   </div>
   <div class="table-responsive">
-    <table id="TasksTable" class="table table-hover align-middle" style="text-align: center ;">
+    <table id="TasksTable" class="table table-borderless table-hover align-middle" style="text-align: center ;">
       <thead>
-        <tr class="table-primary">
+        <tr class="table-dark">
           <th>Nome</th>
           <th>Creazione</th>
           <th>Scadenza</th>

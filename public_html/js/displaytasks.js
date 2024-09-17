@@ -37,6 +37,7 @@ $(document).ready(function() {
         "data": null,
         "render": function(data, type, row) {
           return `
+          <div class="btn-group" role="group" aria-label="TaskActions">
           <button type="button" class="btn btn-primary" value="Modifica Task"
           data-bs-toggle="modal" 
           data-bs-target="#editTaskModal" 
@@ -61,6 +62,7 @@ $(document).ready(function() {
           <i class="bi bi-trash"></i>
           Elimina
           </button>
+          </div>  
           `;
         }
       }

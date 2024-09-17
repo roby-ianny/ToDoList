@@ -1,8 +1,8 @@
 # SAW Project
 Clone (fatto male) di todoist
 
-## Struttura iniziale del DB
-![Struttura Database](./DB.jpg)
+## Struttura DB
+![Struttura Database](./DB.png)
 ## Features
 Obbligatorie:
 
@@ -17,6 +17,10 @@ Obbligatorie:
 A scelta:
 
 - [X] Notifiche
+
+## Funzionalità
+Vedi la [Presentazione](./public_html/presentazione.pdf)
+
 ## Testing
 - Uso dell'immagine docker [tomsik68/xampp](https://hub.docker.com/r/tomsik68/xampp/)
 ```bash
