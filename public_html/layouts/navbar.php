@@ -61,6 +61,12 @@
               Pricing
             </a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/presentazione.pdf">
+              <i class="bi bi-easel3"></i>
+              Presentazione
+            </a>
+          </li>
         </ul>
         <form class="d-flex">
           <?php
